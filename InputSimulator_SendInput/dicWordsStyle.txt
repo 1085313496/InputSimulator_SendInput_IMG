@@ -1,0 +1,114 @@
+[
+  {
+    "Word": "Delay",
+    "Color": "DarkGray",
+    "Bold": true,
+    "Type": 1,
+    "Description": "延迟X毫秒",
+    "Order": 0
+  },
+  {
+    "Word": "KeyPress",
+    "Color": "RoyalBlue",
+    "Bold": true,
+    "Type": 1,
+    "Description": "按下按键并立即释放",
+    "Order": 1
+  },
+  {
+    "Word": "KeyDown",
+    "Color": "Green",
+    "Bold": true,
+    "Type": 1,
+    "Description": "按住按键",
+    "Order": 2
+  },
+  {
+    "Word": "KeyUp",
+    "Color": "Red",
+    "Bold": true,
+    "Type": 1,
+    "Description": "释放按键",
+    "Order": 3
+  },
+  {
+    "Word": "MouseClick",
+    "Color": "DarkCyan",
+    "Bold": true,
+    "Type": 1,
+    "Description": "按下鼠标按键并立即释放",
+    "Order": 4
+  },
+  {
+    "Word": "MouseDown",
+    "Color": "DarkCyan",
+    "Bold": true,
+    "Type": 1,
+    "Description": "按下鼠标按键",
+    "Order": 5
+  },
+  {
+    "Word": "MouseUp",
+    "Color": "DarkCyan",
+    "Bold": true,
+    "Type": 1,
+    "Description": "释放鼠标按键",
+    "Order": 6
+  },
+  {
+    "Word": "MouseWhell",
+    "Color": "DarkCyan",
+    "Bold": true,
+    "Type": 1,
+    "Description": "滑动鼠标滚轮",
+    "Order": 7
+  },
+  {
+    "Word": "MouseMove",
+    "Color": "DarkCyan",
+    "Bold": true,
+    "Type": 1,
+    "Description": "移动鼠标",
+    "Order": 8
+  },
+   {
+    "Word": "MouseMoveToCenter",
+    "Color": "DarkCyan",
+    "Bold": true,
+    "Type": 1,
+    "Description": "移动鼠标到屏幕中间",
+    "Order": 9
+  },
+   {
+    "Word": "MouseMove_R",
+    "Color": "DarkCyan",
+    "Bold": true,
+    "Type": 1,
+    "Description": "移动鼠标相对位置",
+    "Order": 10
+  },
+  {
+    "Word": "(",
+    "Color": "DarkSlateGray",
+    "Bold": false,
+    "Type": 2,
+    "Description": "",
+    "Order": 999
+  },
+  {
+    "Word": ")",
+    "Color": "DarkSlateGray",
+    "Bold": false,
+    "Type": 2,
+    "Description": "",
+    "Order": 9998
+  },
+  {
+    "Word": "//",
+    "Color": "Green",
+    "Bold": false,
+    "Type": 2,
+    "Description": "",
+    "Order": 9999
+  }
+]

@@ -1,0 +1,1213 @@
+[
+  {
+    "VKey": "LBUTTON",
+    "KeyCode": 1,
+    "Description": "鼠标左键",
+    "Enable": true,
+    "Order": 1
+  },
+  {
+    "VKey": "RBUTTON",
+    "KeyCode": 2,
+    "Description": "鼠标右键",
+    "Enable": true,
+    "Order": 2
+  },
+  {
+    "VKey": "CANCEL",
+    "KeyCode": 3,
+    "Description": "控制中断处理",
+    "Enable": true,
+    "Order": 3
+  },
+  {
+    "VKey": "MBUTTON",
+    "KeyCode": 4,
+    "Description": "鼠标中键",
+    "Enable": true,
+    "Order": 4
+  },
+  {
+    "VKey": "XBUTTON1",
+    "KeyCode": 5,
+    "Description": "鼠标按钮X1",
+    "Enable": true,
+    "Order": 5
+  },
+  {
+    "VKey": "XBUTTON2",
+    "KeyCode": 6,
+    "Description": "鼠标按钮X2",
+    "Enable": true,
+    "Order": 6
+  },
+  {
+    "VKey": "BACK",
+    "KeyCode": 8,
+    "Description": "退格键",
+    "Enable": true,
+    "Order": 7
+  },
+  {
+    "VKey": "TAB",
+    "KeyCode": 9,
+    "Description": "Tab键",
+    "Enable": true,
+    "Order": 8
+  },
+  {
+    "VKey": "CLEAR",
+    "KeyCode": 12,
+    "Description": "清除键",
+    "Enable": true,
+    "Order": 9
+  },
+  {
+    "VKey": "RETURN",
+    "KeyCode": 13,
+    "Description": "Enter键",
+    "Enable": true,
+    "Order": 10
+  },
+  {
+    "VKey": "SHIFT",
+    "KeyCode": 16,
+    "Description": "Shift键",
+    "Enable": true,
+    "Order": 11
+  },
+  {
+    "VKey": "CONTROL",
+    "KeyCode": 17,
+    "Description": "Ctrl键",
+    "Enable": true,
+    "Order": 12
+  },
+  {
+    "VKey": "MENU",
+    "KeyCode": 18,
+    "Description": "Alt键",
+    "Enable": true,
+    "Order": 13
+  },
+  {
+    "VKey": "PAUSE",
+    "KeyCode": 19,
+    "Description": "暂停键",
+    "Enable": true,
+    "Order": 14
+  },
+  {
+    "VKey": "CAPITAL",
+    "KeyCode": 20,
+    "Description": "CAPSLOCK",
+    "Enable": true,
+    "Order": 15
+  },
+  {
+    "VKey": "KANA",
+    "KeyCode": 21,
+    "Description": "IME Kana 模式",
+    "Enable": true,
+    "Order": 16
+  },
+  {
+    "VKey": "HANGUL",
+    "KeyCode": 21,
+    "Description": "IME 韩语",
+    "Enable": true,
+    "Order": 17
+  },
+  {
+    "VKey": "IME_ON",
+    "KeyCode": 22,
+    "Description": "IME 打开",
+    "Enable": true,
+    "Order": 18
+  },
+  {
+    "VKey": "JUNJA",
+    "KeyCode": 23,
+    "Description": "IME 举字",
+    "Enable": true,
+    "Order": 19
+  },
+  {
+    "VKey": "FINAL",
+    "KeyCode": 24,
+    "Description": "IME 最终",
+    "Enable": true,
+    "Order": 20
+  },
+  {
+    "VKey": "HANJA",
+    "KeyCode": 25,
+    "Description": "IME 漢字",
+    "Enable": true,
+    "Order": 21
+  },
+  {
+    "VKey": "KANJI",
+    "KeyCode": 25,
+    "Description": "IME 日语",
+    "Enable": true,
+    "Order": 22
+  },
+  {
+    "VKey": "IME_OFF",
+    "KeyCode": 26,
+    "Description": "IME 关闭",
+    "Enable": true,
+    "Order": 23
+  },
+  {
+    "VKey": "ESCAPE",
+    "KeyCode": 27,
+    "Description": "ESC键",
+    "Enable": true,
+    "Order": 24
+  },
+  {
+    "VKey": "CONVERT",
+    "KeyCode": 28,
+    "Description": "IME 转换",
+    "Enable": true,
+    "Order": 25
+  },
+  {
+    "VKey": "NONCONVERT",
+    "KeyCode": 29,
+    "Description": "IME 非转换",
+    "Enable": true,
+    "Order": 26
+  },
+  {
+    "VKey": "ACCEPT",
+    "KeyCode": 30,
+    "Description": "IME 接受",
+    "Enable": true,
+    "Order": 27
+  },
+  {
+    "VKey": "MODECHANGE",
+    "KeyCode": 31,
+    "Description": "IME 模式切换",
+    "Enable": true,
+    "Order": 28
+  },
+  {
+    "VKey": "SPACE",
+    "KeyCode": 32,
+    "Description": "空格键",
+    "Enable": true,
+    "Order": 29
+  },
+  {
+    "VKey": "PRIOR",
+    "KeyCode": 33,
+    "Description": "Page Up键",
+    "Enable": true,
+    "Order": 30
+  },
+  {
+    "VKey": "NEXT",
+    "KeyCode": 34,
+    "Description": "Page Down键",
+    "Enable": true,
+    "Order": 31
+  },
+  {
+    "VKey": "END",
+    "KeyCode": 35,
+    "Description": "End键",
+    "Enable": true,
+    "Order": 32
+  },
+  {
+    "VKey": "HOME",
+    "KeyCode": 36,
+    "Description": "Home键",
+    "Enable": true,
+    "Order": 33
+  },
+  {
+    "VKey": "LEFT",
+    "KeyCode": 37,
+    "Description": "左箭头",
+    "Enable": true,
+    "Order": 34
+  },
+  {
+    "VKey": "UP",
+    "KeyCode": 38,
+    "Description": "上箭头",
+    "Enable": true,
+    "Order": 35
+  },
+  {
+    "VKey": "RIGHT",
+    "KeyCode": 39,
+    "Description": "右箭头",
+    "Enable": true,
+    "Order": 36
+  },
+  {
+    "VKey": "DOWN",
+    "KeyCode": 40,
+    "Description": "下箭头",
+    "Enable": true,
+    "Order": 37
+  },
+  {
+    "VKey": "SELECT",
+    "KeyCode": 41,
+    "Description": "选择键",
+    "Enable": true,
+    "Order": 38
+  },
+  {
+    "VKey": "PRINT",
+    "KeyCode": 42,
+    "Description": "PRINT键",
+    "Enable": true,
+    "Order": 39
+  },
+  {
+    "VKey": "EXECUTE",
+    "KeyCode": 43,
+    "Description": "EXECUTE键",
+    "Enable": true,
+    "Order": 40
+  },
+  {
+    "VKey": "SNAPSHOT",
+    "KeyCode": 44,
+    "Description": "PrintScreen键",
+    "Enable": true,
+    "Order": 41
+  },
+  {
+    "VKey": "INSERT",
+    "KeyCode": 45,
+    "Description": "Insert键",
+    "Enable": true,
+    "Order": 42
+  },
+  {
+    "VKey": "DELETE",
+    "KeyCode": 46,
+    "Description": "Delete键",
+    "Enable": true,
+    "Order": 43
+  },
+  {
+    "VKey": "HELP",
+    "KeyCode": 47,
+    "Description": "帮助键",
+    "Enable": true,
+    "Order": 44
+  },
+  {
+    "VKey": "0",
+    "KeyCode": 48,
+    "Description": "0键",
+    "Enable": true,
+    "Order": 45
+  },
+  {
+    "VKey": "1",
+    "KeyCode": 49,
+    "Description": "1键",
+    "Enable": true,
+    "Order": 46
+  },
+  {
+    "VKey": "2",
+    "KeyCode": 50,
+    "Description": "2键",
+    "Enable": true,
+    "Order": 47
+  },
+  {
+    "VKey": "3",
+    "KeyCode": 51,
+    "Description": "3键",
+    "Enable": true,
+    "Order": 48
+  },
+  {
+    "VKey": "4",
+    "KeyCode": 52,
+    "Description": "4键",
+    "Enable": true,
+    "Order": 49
+  },
+  {
+    "VKey": "5",
+    "KeyCode": 53,
+    "Description": "5键",
+    "Enable": true,
+    "Order": 50
+  },
+  {
+    "VKey": "6",
+    "KeyCode": 54,
+    "Description": "6键",
+    "Enable": true,
+    "Order": 51
+  },
+  {
+    "VKey": "7",
+    "KeyCode": 55,
+    "Description": "7键",
+    "Enable": true,
+    "Order": 52
+  },
+  {
+    "VKey": "8",
+    "KeyCode": 56,
+    "Description": "8键",
+    "Enable": true,
+    "Order": 53
+  },
+  {
+    "VKey": "9",
+    "KeyCode": 57,
+    "Description": "9键",
+    "Enable": true,
+    "Order": 54
+  },
+  {
+    "VKey": "A",
+    "KeyCode": 65,
+    "Description": "A键",
+    "Enable": true,
+    "Order": 55
+  },
+  {
+    "VKey": "B",
+    "KeyCode": 66,
+    "Description": "B键",
+    "Enable": true,
+    "Order": 56
+  },
+  {
+    "VKey": "C",
+    "KeyCode": 67,
+    "Description": "C键",
+    "Enable": true,
+    "Order": 57
+  },
+  {
+    "VKey": "D",
+    "KeyCode": 68,
+    "Description": "D键",
+    "Enable": true,
+    "Order": 58
+  },
+  {
+    "VKey": "E",
+    "KeyCode": 69,
+    "Description": "E键",
+    "Enable": true,
+    "Order": 59
+  },
+  {
+    "VKey": "F",
+    "KeyCode": 70,
+    "Description": "F键",
+    "Enable": true,
+    "Order": 60
+  },
+  {
+    "VKey": "G",
+    "KeyCode": 71,
+    "Description": "G键",
+    "Enable": true,
+    "Order": 61
+  },
+  {
+    "VKey": "H",
+    "KeyCode": 72,
+    "Description": "H键",
+    "Enable": true,
+    "Order": 62
+  },
+  {
+    "VKey": "I",
+    "KeyCode": 73,
+    "Description": "I键",
+    "Enable": true,
+    "Order": 63
+  },
+  {
+    "VKey": "J",
+    "KeyCode": 74,
+    "Description": "J键",
+    "Enable": true,
+    "Order": 64
+  },
+  {
+    "VKey": "K",
+    "KeyCode": 75,
+    "Description": "K键",
+    "Enable": true,
+    "Order": 65
+  },
+  {
+    "VKey": "L",
+    "KeyCode": 76,
+    "Description": "L键",
+    "Enable": true,
+    "Order": 66
+  },
+  {
+    "VKey": "M",
+    "KeyCode": 77,
+    "Description": "M键",
+    "Enable": true,
+    "Order": 67
+  },
+  {
+    "VKey": "N",
+    "KeyCode": 78,
+    "Description": "N键",
+    "Enable": true,
+    "Order": 68
+  },
+  {
+    "VKey": "O",
+    "KeyCode": 79,
+    "Description": "O键",
+    "Enable": true,
+    "Order": 69
+  },
+  {
+    "VKey": "P",
+    "KeyCode": 80,
+    "Description": "P键",
+    "Enable": true,
+    "Order": 70
+  },
+  {
+    "VKey": "Q",
+    "KeyCode": 81,
+    "Description": "Q键",
+    "Enable": true,
+    "Order": 71
+  },
+  {
+    "VKey": "R",
+    "KeyCode": 82,
+    "Description": "R键",
+    "Enable": true,
+    "Order": 72
+  },
+  {
+    "VKey": "S",
+    "KeyCode": 83,
+    "Description": "S键",
+    "Enable": true,
+    "Order": 73
+  },
+  {
+    "VKey": "T",
+    "KeyCode": 84,
+    "Description": "T键",
+    "Enable": true,
+    "Order": 74
+  },
+  {
+    "VKey": "U",
+    "KeyCode": 85,
+    "Description": "U键",
+    "Enable": true,
+    "Order": 75
+  },
+  {
+    "VKey": "V",
+    "KeyCode": 86,
+    "Description": "V键",
+    "Enable": true,
+    "Order": 76
+  },
+  {
+    "VKey": "W",
+    "KeyCode": 87,
+    "Description": "W键",
+    "Enable": true,
+    "Order": 77
+  },
+  {
+    "VKey": "X",
+    "KeyCode": 88,
+    "Description": "X键",
+    "Enable": true,
+    "Order": 78
+  },
+  {
+    "VKey": "Y",
+    "KeyCode": 89,
+    "Description": "Y键",
+    "Enable": true,
+    "Order": 79
+  },
+  {
+    "VKey": "Z",
+    "KeyCode": 90,
+    "Description": "Z键",
+    "Enable": true,
+    "Order": 80
+  },
+  {
+    "VKey": "LWIN",
+    "KeyCode": 91,
+    "Description": "左Windows键",
+    "Enable": true,
+    "Order": 81
+  },
+  {
+    "VKey": "RWIN",
+    "KeyCode": 92,
+    "Description": "右Windows键",
+    "Enable": true,
+    "Order": 82
+  },
+  {
+    "VKey": "APPS",
+    "KeyCode": 93,
+    "Description": "应用程序密钥",
+    "Enable": true,
+    "Order": 83
+  },
+  {
+    "VKey": "SLEEP",
+    "KeyCode": 95,
+    "Description": "睡眠键",
+    "Enable": true,
+    "Order": 84
+  },
+  {
+    "VKey": "NUMPAD0",
+    "KeyCode": 96,
+    "Description": "数字键盘0键",
+    "Enable": true,
+    "Order": 85
+  },
+  {
+    "VKey": "NUMPAD1",
+    "KeyCode": 97,
+    "Description": "数字键盘1键",
+    "Enable": true,
+    "Order": 86
+  },
+  {
+    "VKey": "NUMPAD2",
+    "KeyCode": 98,
+    "Description": "数字键盘2键",
+    "Enable": true,
+    "Order": 87
+  },
+  {
+    "VKey": "NUMPAD3",
+    "KeyCode": 99,
+    "Description": "数字键盘3键",
+    "Enable": true,
+    "Order": 88
+  },
+  {
+    "VKey": "NUMPAD4",
+    "KeyCode": 100,
+    "Description": "数字键盘4键",
+    "Enable": true,
+    "Order": 89
+  },
+  {
+    "VKey": "NUMPAD5",
+    "KeyCode": 101,
+    "Description": "数字键盘5键",
+    "Enable": true,
+    "Order": 90
+  },
+  {
+    "VKey": "NUMPAD6",
+    "KeyCode": 102,
+    "Description": "数字键盘6键",
+    "Enable": true,
+    "Order": 91
+  },
+  {
+    "VKey": "NUMPAD7",
+    "KeyCode": 103,
+    "Description": "数字键盘7键",
+    "Enable": true,
+    "Order": 92
+  },
+  {
+    "VKey": "NUMPAD8",
+    "KeyCode": 104,
+    "Description": "数字键盘8键",
+    "Enable": true,
+    "Order": 93
+  },
+  {
+    "VKey": "NUMPAD9",
+    "KeyCode": 105,
+    "Description": "数字键盘9键",
+    "Enable": true,
+    "Order": 94
+  },
+  {
+    "VKey": "MULTIPLY",
+    "KeyCode": 106,
+    "Description": "数字键盘乘号键",
+    "Enable": true,
+    "Order": 95
+  },
+  {
+    "VKey": "ADD",
+    "KeyCode": 107,
+    "Description": "数字键盘加号键",
+    "Enable": true,
+    "Order": 96
+  },
+  {
+    "VKey": "SEPARATOR",
+    "KeyCode": 108,
+    "Description": "数字键盘分隔符键",
+    "Enable": true,
+    "Order": 97
+  },
+  {
+    "VKey": "SUBTRACT",
+    "KeyCode": 109,
+    "Description": "数字键盘减号键",
+    "Enable": true,
+    "Order": 98
+  },
+  {
+    "VKey": "DECIMAL",
+    "KeyCode": 110,
+    "Description": "数字键盘小数点键",
+    "Enable": true,
+    "Order": 99
+  },
+  {
+    "VKey": "DIVIDE",
+    "KeyCode": 111,
+    "Description": "数字键盘除号键",
+    "Enable": true,
+    "Order": 100
+  },
+  {
+    "VKey": "F1",
+    "KeyCode": 112,
+    "Description": "F1键",
+    "Enable": true,
+    "Order": 101
+  },
+  {
+    "VKey": "F2",
+    "KeyCode": 113,
+    "Description": "F2键",
+    "Enable": true,
+    "Order": 102
+  },
+  {
+    "VKey": "F3",
+    "KeyCode": 114,
+    "Description": "F3键",
+    "Enable": true,
+    "Order": 103
+  },
+  {
+    "VKey": "F4",
+    "KeyCode": 115,
+    "Description": "F4键",
+    "Enable": true,
+    "Order": 104
+  },
+  {
+    "VKey": "F5",
+    "KeyCode": 116,
+    "Description": "F5键",
+    "Enable": true,
+    "Order": 105
+  },
+  {
+    "VKey": "F6",
+    "KeyCode": 117,
+    "Description": "F6键",
+    "Enable": true,
+    "Order": 106
+  },
+  {
+    "VKey": "F7",
+    "KeyCode": 118,
+    "Description": "F7键",
+    "Enable": true,
+    "Order": 107
+  },
+  {
+    "VKey": "F8",
+    "KeyCode": 119,
+    "Description": "F8键",
+    "Enable": true,
+    "Order": 108
+  },
+  {
+    "VKey": "F9",
+    "KeyCode": 120,
+    "Description": "F9键",
+    "Enable": true,
+    "Order": 109
+  },
+  {
+    "VKey": "F10",
+    "KeyCode": 121,
+    "Description": "F10键",
+    "Enable": true,
+    "Order": 110
+  },
+  {
+    "VKey": "F11",
+    "KeyCode": 122,
+    "Description": "F11键",
+    "Enable": true,
+    "Order": 111
+  },
+  {
+    "VKey": "F12",
+    "KeyCode": 123,
+    "Description": "F12键",
+    "Enable": true,
+    "Order": 112
+  },
+  {
+    "VKey": "F13",
+    "KeyCode": 124,
+    "Description": "F13键",
+    "Enable": true,
+    "Order": 113
+  },
+  {
+    "VKey": "F14",
+    "KeyCode": 125,
+    "Description": "F14键",
+    "Enable": true,
+    "Order": 114
+  },
+  {
+    "VKey": "F15",
+    "KeyCode": 126,
+    "Description": "F15键",
+    "Enable": true,
+    "Order": 115
+  },
+  {
+    "VKey": "F16",
+    "KeyCode": 127,
+    "Description": "F16键",
+    "Enable": true,
+    "Order": 116
+  },
+  {
+    "VKey": "F17",
+    "KeyCode": 128,
+    "Description": "F17键",
+    "Enable": true,
+    "Order": 117
+  },
+  {
+    "VKey": "F18",
+    "KeyCode": 129,
+    "Description": "F18键",
+    "Enable": true,
+    "Order": 118
+  },
+  {
+    "VKey": "F19",
+    "KeyCode": 130,
+    "Description": "F19键",
+    "Enable": true,
+    "Order": 119
+  },
+  {
+    "VKey": "F20",
+    "KeyCode": 131,
+    "Description": "F20键",
+    "Enable": true,
+    "Order": 120
+  },
+  {
+    "VKey": "F21",
+    "KeyCode": 132,
+    "Description": "F21键",
+    "Enable": true,
+    "Order": 121
+  },
+  {
+    "VKey": "F22",
+    "KeyCode": 133,
+    "Description": "F22键",
+    "Enable": true,
+    "Order": 122
+  },
+  {
+    "VKey": "F23",
+    "KeyCode": 134,
+    "Description": "F23键",
+    "Enable": true,
+    "Order": 123
+  },
+  {
+    "VKey": "F24",
+    "KeyCode": 135,
+    "Description": "F24键",
+    "Enable": true,
+    "Order": 124
+  },
+  {
+    "VKey": "NUMLOCK",
+    "KeyCode": 144,
+    "Description": "数字键盘锁定键",
+    "Enable": true,
+    "Order": 125
+  },
+  {
+    "VKey": "SCROLL",
+    "KeyCode": 145,
+    "Description": "滚动锁定键",
+    "Enable": true,
+    "Order": 126
+  },
+  {
+    "VKey": "LSHIFT",
+    "KeyCode": 160,
+    "Description": "左Shift键",
+    "Enable": true,
+    "Order": 127
+  },
+  {
+    "VKey": "RSHIFT",
+    "KeyCode": 161,
+    "Description": "右Shift键",
+    "Enable": true,
+    "Order": 128
+  },
+  {
+    "VKey": "LCONTROL",
+    "KeyCode": 162,
+    "Description": "左Ctrl键",
+    "Enable": true,
+    "Order": 129
+  },
+  {
+    "VKey": "RCONTROL",
+    "KeyCode": 163,
+    "Description": "右Ctrl键",
+    "Enable": true,
+    "Order": 130
+  },
+  {
+    "VKey": "LMENU",
+    "KeyCode": 164,
+    "Description": "左Alt键",
+    "Enable": true,
+    "Order": 131
+  },
+  {
+    "VKey": "RMENU",
+    "KeyCode": 165,
+    "Description": "右Alt键",
+    "Enable": true,
+    "Order": 132
+  },
+  {
+    "VKey": "BROWSER_BACK",
+    "KeyCode": 166,
+    "Description": "浏览器后退键",
+    "Enable": true,
+    "Order": 133
+  },
+  {
+    "VKey": "BROWSER_FORWARD",
+    "KeyCode": 167,
+    "Description": "浏览器前进键",
+    "Enable": true,
+    "Order": 134
+  },
+  {
+    "VKey": "BROWSER_REFRESH",
+    "KeyCode": 168,
+    "Description": "浏览器刷新键",
+    "Enable": true,
+    "Order": 135
+  },
+  {
+    "VKey": "BROWSER_STOP",
+    "KeyCode": 169,
+    "Description": "浏览器停止键",
+    "Enable": true,
+    "Order": 136
+  },
+  {
+    "VKey": "BROWSER_SEARCH",
+    "KeyCode": 170,
+    "Description": "浏览器搜索键",
+    "Enable": true,
+    "Order": 137
+  },
+  {
+    "VKey": "BROWSER_FAVORITES",
+    "KeyCode": 171,
+    "Description": "浏览器收藏键",
+    "Enable": true,
+    "Order": 138
+  },
+  {
+    "VKey": "BROWSER_HOME",
+    "KeyCode": 172,
+    "Description": "浏览器主页键",
+    "Enable": true,
+    "Order": 139
+  },
+  {
+    "VKey": "VOLUME_MUTE",
+    "KeyCode": 173,
+    "Description": "静音键",
+    "Enable": true,
+    "Order": 140
+  },
+  {
+    "VKey": "VOLUME_DOWN",
+    "KeyCode": 174,
+    "Description": "音量减键",
+    "Enable": true,
+    "Order": 141
+  },
+  {
+    "VKey": "VOLUME_UP",
+    "KeyCode": 175,
+    "Description": "音量加键",
+    "Enable": true,
+    "Order": 142
+  },
+  {
+    "VKey": "MEDIA_NEXT_TRACK",
+    "KeyCode": 176,
+    "Description": "下一首音乐键",
+    "Enable": true,
+    "Order": 143
+  },
+  {
+    "VKey": "MEDIA_PREV_TRACK",
+    "KeyCode": 177,
+    "Description": "上一首音乐键",
+    "Enable": true,
+    "Order": 144
+  },
+  {
+    "VKey": "MEDIA_STOP",
+    "KeyCode": 178,
+    "Description": "停止播放键",
+    "Enable": true,
+    "Order": 145
+  },
+  {
+    "VKey": "MEDIA_PLAY_PAUSE",
+    "KeyCode": 179,
+    "Description": "播放/暂停键",
+    "Enable": true,
+    "Order": 146
+  },
+  {
+    "VKey": "LAUNCH_MAIL",
+    "KeyCode": 180,
+    "Description": "打开邮件键",
+    "Enable": true,
+    "Order": 147
+  },
+  {
+    "VKey": "LAUNCH_MEDIA_SELECT",
+    "KeyCode": 181,
+    "Description": "打开媒体选择键",
+    "Enable": true,
+    "Order": 148
+  },
+  {
+    "VKey": "LAUNCH_APP1",
+    "KeyCode": 182,
+    "Description": "打开应用程序1键",
+    "Enable": true,
+    "Order": 149
+  },
+  {
+    "VKey": "LAUNCH_APP2",
+    "KeyCode": 183,
+    "Description": "打开应用程序2键",
+    "Enable": true,
+    "Order": 150
+  },
+  {
+    "VKey": "OEM_1",
+    "KeyCode": 186,
+    "Description": "用于US标准键盘的逗号和小数点",
+    "Enable": true,
+    "Order": 151
+  },
+  {
+    "VKey": "OEM_PLUS",
+    "KeyCode": 187,
+    "Description": "用于US标准键盘的加号键",
+    "Enable": true,
+    "Order": 152
+  },
+  {
+    "VKey": "OEM_COMMA",
+    "KeyCode": 188,
+    "Description": "用于US标准键盘的逗号键",
+    "Enable": true,
+    "Order": 153
+  },
+  {
+    "VKey": "OEM_MINUS",
+    "KeyCode": 189,
+    "Description": "用于US标准键盘的减号键",
+    "Enable": true,
+    "Order": 154
+  },
+  {
+    "VKey": "OEM_PERIOD",
+    "KeyCode": 190,
+    "Description": "用于US标准键盘的句号键",
+    "Enable": true,
+    "Order": 155
+  },
+  {
+    "VKey": "OEM_2",
+    "KeyCode": 191,
+    "Description": "用于US标准键盘的问号和斜线键",
+    "Enable": true,
+    "Order": 156
+  },
+  {
+    "VKey": "OEM_3",
+    "KeyCode": 192,
+    "Description": "用于US标准键盘的波浪线键",
+    "Enable": true,
+    "Order": 157
+  },
+  {
+    "VKey": "OEM_4",
+    "KeyCode": 219,
+    "Description": "用于US标准键盘的大括号和左方括号键",
+    "Enable": true,
+    "Order": 158
+  },
+  {
+    "VKey": "OEM_5",
+    "KeyCode": 220,
+    "Description": "用于US标准键盘的反斜杠和下划线键",
+    "Enable": true,
+    "Order": 159
+  },
+  {
+    "VKey": "OEM_6",
+    "KeyCode": 221,
+    "Description": "用于US标准键盘的大括号和右方括号键",
+    "Enable": true,
+    "Order": 160
+  },
+  {
+    "VKey": "OEM_7",
+    "KeyCode": 222,
+    "Description": "用于US标准键盘的单引号和双引号键",
+    "Enable": true,
+    "Order": 161
+  },
+  {
+    "VKey": "OEM_8",
+    "KeyCode": 223,
+    "Description": "用于US标准键盘的GRAVE键",
+    "Enable": true,
+    "Order": 162
+  },
+  {
+    "VKey": "OEM_102",
+    "KeyCode": 226,
+    "Description": "用于US标准键盘的“”和“”键",
+    "Enable": true,
+    "Order": 163
+  },
+  {
+    "VKey": "PROCESSKEY",
+    "KeyCode": 229,
+    "Description": "IME PROCESS键",
+    "Enable": true,
+    "Order": 164
+  },
+  {
+    "VKey": "PACKET",
+    "KeyCode": 231,
+    "Description": "用于将 Unicode 字符当作键击传递",
+    "Enable": true,
+    "Order": 165
+  },
+  {
+    "VKey": "ATTN",
+    "KeyCode": 246,
+    "Description": "ATTN键",
+    "Enable": true,
+    "Order": 166
+  },
+  {
+    "VKey": "CRSEL",
+    "KeyCode": 247,
+    "Description": "CRSEL键",
+    "Enable": true,
+    "Order": 167
+  },
+  {
+    "VKey": "EXSEL",
+    "KeyCode": 248,
+    "Description": "EXSEL键",
+    "Enable": true,
+    "Order": 168
+  },
+  {
+    "VKey": "EREOF",
+    "KeyCode": 249,
+    "Description": "EREOF键",
+    "Enable": true,
+    "Order": 169
+  },
+  {
+    "VKey": "PLAY",
+    "KeyCode": 250,
+    "Description": "PLAY键",
+    "Enable": true,
+    "Order": 170
+  },
+  {
+    "VKey": "ZOOM",
+    "KeyCode": 251,
+    "Description": "ZOOM键",
+    "Enable": true,
+    "Order": 171
+  },
+  {
+    "VKey": "PA1",
+    "KeyCode": 253,
+    "Description": "PA1键",
+    "Enable": true,
+    "Order": 172
+  },
+  {
+    "VKey": "OEM_CLEAR",
+    "KeyCode": 254,
+    "Description": "清除键",
+    "Enable": true,
+    "Order": 173
+  }
+]

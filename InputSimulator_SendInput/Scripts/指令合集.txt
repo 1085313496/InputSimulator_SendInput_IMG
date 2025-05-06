@@ -1,0 +1,39 @@
+﻿{
+    "name": "指令合集",
+    "hotKey": "F8",
+    "enable": 1,
+    "order": 1,
+    "loopMode": true,
+    "actions": [
+        {
+            "serialNo": 1,
+            "actionType": "Delay",
+            "actionvalue": "100"
+        },
+        {
+            "serialNo": 2,
+            "actionType": "KeyPress",
+            "actionvalue": "V"
+        },
+        {
+            "serialNo": 3,
+            "actionType": "Delay",
+            "actionvalue": "500"
+        },
+        {
+            "serialNo": 4,
+            "actionType": "MouseClick",
+            "actionvalue": "L"
+        },
+        {
+            "serialNo": 5,
+            "actionType": "Delay",
+            "actionvalue": "500"
+        },
+        {
+            "serialNo": 6,
+            "actionType": "有无图片",
+            "actionvalue": "C://图片.png"
+        }
+    ]
+}
