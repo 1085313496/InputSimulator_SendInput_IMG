@@ -1,4 +1,5 @@
-﻿using OpenCvSharp;
+﻿using InputSimulator_SendInput.BaseClass;
+using OpenCvSharp;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -80,6 +81,44 @@ namespace InputSimulator_SendInput
                         return true;
                     }
                     return false;
+                }
+            }
+        }
+        /// <summary>
+        /// 屏幕上是否有指定的图案
+        /// </summary>
+        /// <param name="templatePath">图案路径</param>
+        /// <param name="dtcf">识别配置</param>
+        /// <returns></returns>
+        public static bool IsPatternPresent(string templatePath, DetectConfig dtcf)
+        {
+            Rectangle screenBounds = SystemInformation.VirtualScreen;
+            Rectangle captureArea = new Rectangle(screenBounds.X, screenBounds.Y, screenBounds.Width, screenBounds.Height);
+            if (dtcf.SearchArea != null)
+                captureArea = new Rectangle(dtcf.SearchArea.X, dtcf.SearchArea.Y, dtcf.SearchArea.Width, dtcf.SearchArea.Height);
+
+            // 1. 截取屏幕图像
+            using (var screenBitmap = CaptureScreen(captureArea))
+            {
+                // 2. 将Bitmap转换为OpenCV的Mat格式（并转换为RGB）
+                using (Mat screenMat = BitmapToMat(screenBitmap))
+                using (Mat templateMat = new Mat(templatePath, ImreadModes.Color))
+                {
+                    // 3. 转换为灰度图（可选，但通常能提高性能）
+                    Mat screenGray = new Mat();
+                    Mat templateGray = new Mat();
+                    Cv2.CvtColor(screenMat, screenGray, ColorConversionCodes.BGR2GRAY);
+                    Cv2.CvtColor(templateMat, templateGray, ColorConversionCodes.BGR2GRAY);
+
+                    // 4. 模板匹配
+                    Mat result = new Mat();
+                    Cv2.MatchTemplate(screenGray, templateGray, result, TemplateMatchModes.CCoeffNormed);
+
+                    // 5. 获取最大匹配值
+                    Cv2.MinMaxLoc(result, out _, out double maxVal, out _, out _);
+
+                    // 6. 判断是否超过阈值
+                    return maxVal >= dtcf.Threshold;
                 }
             }
         }

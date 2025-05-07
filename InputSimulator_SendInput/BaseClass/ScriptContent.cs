@@ -100,7 +100,7 @@ namespace InputSimulator_SendInput.BaseClass
         /// <summary>
         /// 识别阈值 [匹配程度]
         /// </summary>
-        public float Threshold { get; set; }
+        public double Threshold { get; set; }
     }
     /// <summary>
     /// 查找区域
