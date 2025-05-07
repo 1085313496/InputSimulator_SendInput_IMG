@@ -98,6 +98,21 @@ namespace InputSimulator_SendInput
             }
             return bitmap;
         }
+        /// <summary>
+        /// 截取屏幕的指定区域
+        /// </summary>
+        /// <param name="captureArea">需要截取的屏幕区域</param>
+        /// <returns>截取的屏幕图像</returns>
+        private static Bitmap CaptureScreen(Rectangle captureArea)
+        {
+            Bitmap bitmap = new Bitmap(captureArea.Width, captureArea.Height);
+            using (Graphics g = Graphics.FromImage(bitmap))
+            {
+                g.CopyFromScreen(captureArea.X, captureArea.Y, 0, 0, captureArea.Size);
+            }
+            return bitmap;
+        }
+
 
         /// <summary>
         /// 将Bitmap转换为OpenCV的Mat（并处理通道顺序）

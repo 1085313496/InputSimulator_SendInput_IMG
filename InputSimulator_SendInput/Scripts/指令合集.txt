@@ -32,8 +32,41 @@
         },
         {
             "serialNo": 6,
-            "actionType": "有无图片",
-            "actionvalue": "C://图片.png"
+            "actionType": "DetectImg",
+            "actionvalue": "C://图片.png",
+            "detectconfig": {
+                "searchArea": {
+                    "X": 100,
+                    "Y": 200,
+                    "Width": 300,
+                    "Height": 400
+                },
+                "threshold": 0.85
+            },
+            "matchActions": [
+                {
+                    "serialNo": 1,
+                    "actionType": "Delay",
+                    "actionvalue": "100"
+                },
+                {
+                    "serialNo": 2,
+                    "actionType": "KeyPress",
+                    "actionvalue": "A"
+                }
+            ],
+            "unmatchActions": [
+                {
+                    "serialNo": 1,
+                    "actionType": "Delay",
+                    "actionvalue": "100"
+                },
+                {
+                    "serialNo": 2,
+                    "actionType": "KeyPress",
+                    "actionvalue": "B"
+                }
+            ]
         }
     ]
 }
