@@ -464,122 +464,130 @@ namespace InputSimulator_SendInput
             _scriptContent.SortSelf();
             foreach (ScriptAction scta in _scriptContent.Actions)
             {
-                string cdType = scta.ActionType.ToUpper();
-                string codeValue = scta.ActionValue.ToUpper();
-
                 if (!IsRunning)
                     return;
 
-                switch (cdType)
-                {
-                    case "Delay":
-                    case "DELAY":
-                        int itv = 0;
-                        int delayMs = int.TryParse(codeValue, out itv) ? itv : 0;
-                        Thread.Sleep(delayMs);
-                        break;
-
-                    #region 按键操作
-                    case "KeyPress":
-                    case "KEYPRESS":
-                        byte key = GlobalParams.GetKeyCode(codeValue);
-                        if (key > 0)
-                            SendKBM.SendKeyPress(key);
-                        break;
-                    case "KeyDown":
-                    case "KEYDOWN":
-                        byte key1 = GlobalParams.GetKeyCode(codeValue);
-                        if (key1 > 0)
-                            SendKBM.SendKeyDown(key1);
-                        break;
-                    case "KeyUp":
-                    case "KEYUP":
-                        byte key2 = GlobalParams.GetKeyCode(codeValue);
-                        if (key2 > 0)
-                            SendKBM.SendKeyUp(key2);
-                        break;
-                    #endregion
-
-                    #region 鼠标操作
-                    case "MouseClick":
-                    case "MOUSECLICK":
-                        switch (codeValue)
-                        {
-                            case "LBUTTON":
-                            case "L": SendKBM.MouseLeftClick(); break;
-                            case "MBUTTON":
-                            case "M": SendKBM.MouseMiddleClick(); break;
-                            case "RBUTTON":
-                            case "R": SendKBM.MouseRightClick(); break;
-                        }
-                        break;
-                    case "MouseDown":
-                    case "MOUSEDOWN":
-                        switch (codeValue)
-                        {
-                            case "LBUTTON":
-                            case "L": SendKBM.MouseLeftDown(); break;
-                            case "MBUTTON":
-                            case "M": SendKBM.MouseMiddleDown(); break;
-                            case "RBUTTON":
-                            case "R": SendKBM.MouseRightDown(); break;
-                        }
-                        break;
-                    case "MouseUp":
-                    case "MOUSEUP":
-                        switch (codeValue)
-                        {
-                            case "LBUTTON":
-                            case "L": SendKBM.MouseLeftUp(); break;
-                            case "MBUTTON":
-                            case "M": SendKBM.MouseMiddleUp(); break;
-                            case "RBUTTON":
-                            case "R": SendKBM.MouseRightUp(); break;
-                        }
-                        break;
-
-                    case "MouseWhell":
-                    case "MOUSEWHELL":
-                        int scroll = 0;
-                        int.TryParse(codeValue, out scroll);
-                        SendKBM.MouseWhell(scroll);
-                        break;
-                    case "MouseMove":
-                    case "MOUSEMOVE":
-                        int x = 0, y = 0;
-                        int.TryParse(codeValue.Split(',')[0], out x);
-                        int.TryParse(codeValue.Split(',')[1], out y);
-                        SendKBM.MouseMove(new Point(x, y));
-                        break;
-                    case "MouseMove_A":
-                        int xa = 0, ya = 0;
-                        int.TryParse(codeValue.Split(',')[0], out xa);
-                        int.TryParse(codeValue.Split(',')[1], out ya);
-                        SendKBM.MouseMove_A(new Point(xa, ya), Control.MousePosition);
-                        break;
-                    case "MouseMoveToCenter":
-                        int cx = Screen.PrimaryScreen.WorkingArea.Width / 2;
-                        int cy = Screen.PrimaryScreen.WorkingArea.Height / 2;
-                        SendKBM.MouseMove(new Point(cx, cy));
-                        break;
-                    case "MouseMove_R":
-                    case "MouseMove_Relative":
-                        int dx = 0, dy = 0;
-                        int.TryParse(codeValue.Split(',')[0], out dx);
-                        int.TryParse(codeValue.Split(',')[1], out dy);
-                        SendKBM.MouseMove_Relative(dx, dy);
-                        break;
-                    case "MouseMove_RA":
-                    case "MouseMove_Relative_A":
-                        int dxa = 0, dya = 0;
-                        int.TryParse(codeValue.Split(',')[0], out dxa);
-                        int.TryParse(codeValue.Split(',')[1], out dya);
-                        SendKBM.MouseMove_Relative_A(dxa, dya);
-                        break;
-                        #endregion
-                }
+                ExcuteCommand(scta);
             }
         }
+        /// <summary>
+        /// 执行脚本指令
+        /// </summary>
+        /// <param name="scta"></param>
+        private void ExcuteCommand(ScriptAction scta) {
+            string cdType = scta.ActionType.ToUpper();
+            string codeValue = scta.ActionValue.ToUpper();
+
+            switch (cdType)
+            {
+                case "Delay":
+                case "DELAY":
+                    int itv = 0;
+                    int delayMs = int.TryParse(codeValue, out itv) ? itv : 0;
+                    Thread.Sleep(delayMs);
+                    break;
+
+                #region 按键操作
+                case "KeyPress":
+                case "KEYPRESS":
+                    byte key = GlobalParams.GetKeyCode(codeValue);
+                    if (key > 0)
+                        SendKBM.SendKeyPress(key);
+                    break;
+                case "KeyDown":
+                case "KEYDOWN":
+                    byte key1 = GlobalParams.GetKeyCode(codeValue);
+                    if (key1 > 0)
+                        SendKBM.SendKeyDown(key1);
+                    break;
+                case "KeyUp":
+                case "KEYUP":
+                    byte key2 = GlobalParams.GetKeyCode(codeValue);
+                    if (key2 > 0)
+                        SendKBM.SendKeyUp(key2);
+                    break;
+                #endregion
+
+                #region 鼠标操作
+                case "MouseClick":
+                case "MOUSECLICK":
+                    switch (codeValue)
+                    {
+                        case "LBUTTON":
+                        case "L": SendKBM.MouseLeftClick(); break;
+                        case "MBUTTON":
+                        case "M": SendKBM.MouseMiddleClick(); break;
+                        case "RBUTTON":
+                        case "R": SendKBM.MouseRightClick(); break;
+                    }
+                    break;
+                case "MouseDown":
+                case "MOUSEDOWN":
+                    switch (codeValue)
+                    {
+                        case "LBUTTON":
+                        case "L": SendKBM.MouseLeftDown(); break;
+                        case "MBUTTON":
+                        case "M": SendKBM.MouseMiddleDown(); break;
+                        case "RBUTTON":
+                        case "R": SendKBM.MouseRightDown(); break;
+                    }
+                    break;
+                case "MouseUp":
+                case "MOUSEUP":
+                    switch (codeValue)
+                    {
+                        case "LBUTTON":
+                        case "L": SendKBM.MouseLeftUp(); break;
+                        case "MBUTTON":
+                        case "M": SendKBM.MouseMiddleUp(); break;
+                        case "RBUTTON":
+                        case "R": SendKBM.MouseRightUp(); break;
+                    }
+                    break;
+
+                case "MouseWhell":
+                case "MOUSEWHELL":
+                    int scroll = 0;
+                    int.TryParse(codeValue, out scroll);
+                    SendKBM.MouseWhell(scroll);
+                    break;
+                case "MouseMove":
+                case "MOUSEMOVE":
+                    int x = 0, y = 0;
+                    int.TryParse(codeValue.Split(',')[0], out x);
+                    int.TryParse(codeValue.Split(',')[1], out y);
+                    SendKBM.MouseMove(new Point(x, y));
+                    break;
+                case "MouseMove_A":
+                    int xa = 0, ya = 0;
+                    int.TryParse(codeValue.Split(',')[0], out xa);
+                    int.TryParse(codeValue.Split(',')[1], out ya);
+                    SendKBM.MouseMove_A(new Point(xa, ya), Control.MousePosition);
+                    break;
+                case "MouseMoveToCenter":
+                    int cx = Screen.PrimaryScreen.WorkingArea.Width / 2;
+                    int cy = Screen.PrimaryScreen.WorkingArea.Height / 2;
+                    SendKBM.MouseMove(new Point(cx, cy));
+                    break;
+                case "MouseMove_R":
+                case "MouseMove_Relative":
+                    int dx = 0, dy = 0;
+                    int.TryParse(codeValue.Split(',')[0], out dx);
+                    int.TryParse(codeValue.Split(',')[1], out dy);
+                    SendKBM.MouseMove_Relative(dx, dy);
+                    break;
+                case "MouseMove_RA":
+                case "MouseMove_Relative_A":
+                    int dxa = 0, dya = 0;
+                    int.TryParse(codeValue.Split(',')[0], out dxa);
+                    int.TryParse(codeValue.Split(',')[1], out dya);
+                    SendKBM.MouseMove_Relative_A(dxa, dya);
+                    break;
+                    #endregion
+            }
+        }
+
         /// <summary>
         /// 停止运行脚本
         /// </summary>
