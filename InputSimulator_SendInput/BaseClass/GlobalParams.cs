@@ -15,7 +15,14 @@ namespace InputSimulator_SendInput
     /// </summary>
     public static class GlobalParams
     {
+        /// <summary>
+        /// 快捷键列表
+        /// </summary>
         public static List<string> lsShortKey = new List<string>() { "F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "F10", "F11", "F12" };
+        /// <summary>
+        /// 匹配点名称列表
+        /// </summary>
+        public static List<string> lsMatchedPointName = new List<string>() { "MatchedPt", "MatchedPoint", "匹配点" };
 
         #region 虚拟按键代码
         #region

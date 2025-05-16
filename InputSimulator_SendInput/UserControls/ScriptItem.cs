@@ -2,6 +2,7 @@
 using InputSimulator_SendInput.Tools;
 using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
@@ -474,9 +475,11 @@ namespace InputSimulator_SendInput
         /// 执行脚本指令
         /// </summary>
         /// <param name="scta"></param>
-        private void ExcuteCommand(ScriptAction scta) {
+        private void ExcuteCommand(ScriptAction scta, object ExtraData = null)
+        {
             string cdType = scta.ActionType.ToUpper();
             string codeValue = scta.ActionValue.ToUpper();
+
 
             switch (cdType)
             {
@@ -554,16 +557,12 @@ namespace InputSimulator_SendInput
                     break;
                 case "MouseMove":
                 case "MOUSEMOVE":
-                    int x = 0, y = 0;
-                    int.TryParse(codeValue.Split(',')[0], out x);
-                    int.TryParse(codeValue.Split(',')[1], out y);
-                    SendKBM.MouseMove(new Point(x, y));
+                    Point _pt = GetPointFromCodeValue(codeValue, ExtraData);
+                    SendKBM.MouseMove(new Point(_pt.X, _pt.Y));
                     break;
                 case "MouseMove_A":
-                    int xa = 0, ya = 0;
-                    int.TryParse(codeValue.Split(',')[0], out xa);
-                    int.TryParse(codeValue.Split(',')[1], out ya);
-                    SendKBM.MouseMove_A(new Point(xa, ya), Control.MousePosition);
+                    Point _ptA = GetPointFromCodeValue(codeValue, ExtraData);
+                    SendKBM.MouseMove_A(new Point(_ptA.X, _ptA.Y), Control.MousePosition);
                     break;
                 case "MouseMoveToCenter":
                     int cx = Screen.PrimaryScreen.WorkingArea.Width / 2;
@@ -572,22 +571,66 @@ namespace InputSimulator_SendInput
                     break;
                 case "MouseMove_R":
                 case "MouseMove_Relative":
-                    int dx = 0, dy = 0;
-                    int.TryParse(codeValue.Split(',')[0], out dx);
-                    int.TryParse(codeValue.Split(',')[1], out dy);
-                    SendKBM.MouseMove_Relative(dx, dy);
+                    Point _ptR = GetPointFromCodeValue(codeValue, ExtraData);
+                    SendKBM.MouseMove_Relative(_ptR.X, _ptR.Y);
                     break;
                 case "MouseMove_RA":
                 case "MouseMove_Relative_A":
-                    int dxa = 0, dya = 0;
-                    int.TryParse(codeValue.Split(',')[0], out dxa);
-                    int.TryParse(codeValue.Split(',')[1], out dya);
-                    SendKBM.MouseMove_Relative_A(dxa, dya);
+                    Point _ptRA = GetPointFromCodeValue(codeValue, ExtraData);
+                    SendKBM.MouseMove_Relative_A(_ptRA.X, _ptRA.Y);
+                    break;
+                #endregion
+
+                #region 屏幕图案检测
+                case "DetectImg":
+                    Point pt = new Point(0, 0);
+                    bool bl = ScreenPatternDetector.IsPatternPresent(codeValue, scta.Detectconfig, out pt);
+
+                    List<SubScriptAction> ls = bl ? scta.SortActionsList(scta.MatchActions) : scta.SortActionsList(scta.MatchActions);
+                    foreach (SubScriptAction _sta in ls)
+                    {
+                        ScriptAction _sa = new ScriptAction();
+                        _sa.SerialNo = _sta.SerialNo;
+                        _sa.ActionType = _sta.ActionType;
+                        _sa.ActionValue = _sta.ActionValue;
+                        ExcuteCommand(_sa, pt);
+                    }
                     break;
                     #endregion
             }
         }
-
+        /// <summary>
+        /// 从脚本指令中获取坐标
+        /// </summary>
+        /// <param name="_codeValue"></param>
+        /// <param name="ExtraData"></param>
+        /// <returns></returns>
+        private Point GetPointFromCodeValue(string _codeValue, object ExtraData)
+        {
+            try
+            {
+                Point _mpt;
+                if (GlobalParams.lsMatchedPointName.Contains(_codeValue))
+                {
+                    if (ExtraData != null)
+                        _mpt = (Point)ExtraData;
+                    else
+                        _mpt = new Point(0, 0);
+                }
+                else
+                {
+                    int x = 0, y = 0;
+                    int.TryParse(_codeValue.Split(',')[0], out x);
+                    int.TryParse(_codeValue.Split(',')[1], out y);
+                    _mpt = new Point(x, y);
+                }
+                return _mpt;
+            }
+            catch (Exception ex)
+            {
+                return new Point(0, 0);
+            }
+        }
         /// <summary>
         /// 停止运行脚本
         /// </summary>
@@ -659,7 +702,7 @@ namespace InputSimulator_SendInput
             else
             {
                 ReloadScriptContent();
-                frmScriptEditor_V2 fsce = new frmScriptEditor_V2(_scriptContent,ScriptPath);
+                frmScriptEditor_V2 fsce = new frmScriptEditor_V2(_scriptContent, ScriptPath);
                 fsce.Show();
             }
 

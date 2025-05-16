@@ -69,6 +69,11 @@ namespace InputSimulator_SendInput.BaseClass
         /// 不匹配时的动作
         /// </summary>
         public List<SubScriptAction> UnmatchActions { get; set; }
+
+        /// <summary>
+        /// 按排序字段排序
+        /// </summary>
+        public List<SubScriptAction> SortActionsList(List<SubScriptAction> ls) { ls.Sort((x, y) => x.SerialNo.CompareTo(y.SerialNo)); return ls; }
     }
     /// <summary>
     /// 脚本的某一个动作 [子级节点用]

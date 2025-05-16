@@ -90,12 +90,14 @@ namespace InputSimulator_SendInput
         /// <param name="templatePath">图案路径</param>
         /// <param name="dtcf">识别配置</param>
         /// <returns></returns>
-        public static bool IsPatternPresent(string templatePath, DetectConfig dtcf)
+        public static bool IsPatternPresent(string templatePath, DetectConfig dtcf, out System.Drawing.Point pt)
         {
             Rectangle screenBounds = SystemInformation.VirtualScreen;
             Rectangle captureArea = new Rectangle(screenBounds.X, screenBounds.Y, screenBounds.Width, screenBounds.Height);
             if (dtcf.SearchArea != null)
                 captureArea = new Rectangle(dtcf.SearchArea.X, dtcf.SearchArea.Y, dtcf.SearchArea.Width, dtcf.SearchArea.Height);
+
+            pt = new System.Drawing.Point(0, 0);
 
             // 1. 截取屏幕图像
             using (var screenBitmap = CaptureScreen(captureArea))
@@ -115,10 +117,16 @@ namespace InputSimulator_SendInput
                     Cv2.MatchTemplate(screenGray, templateGray, result, TemplateMatchModes.CCoeffNormed);
 
                     // 5. 获取最大匹配值
-                    Cv2.MinMaxLoc(result, out _, out double maxVal, out _, out _);
+                    Cv2.MinMaxLoc(result, out _, out double maxVal, out _, out OpenCvSharp.Point maxLoc);
 
                     // 6. 判断是否超过阈值
-                    return maxVal >= dtcf.Threshold;
+                    if (maxVal >= dtcf.Threshold)
+                    {
+                        // 将 OpenCvSharp.Point 转换为 System.Drawing.Point
+                        pt = new System.Drawing.Point(maxLoc.X, maxLoc.Y);
+                        return true;
+                    }
+                    return false;
                 }
             }
         }

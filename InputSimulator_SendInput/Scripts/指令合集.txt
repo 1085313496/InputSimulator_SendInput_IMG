@@ -51,8 +51,8 @@
                 },
                 {
                     "serialNo": 2,
-                    "actionType": "KeyPress",
-                    "actionvalue": "A"
+                    "actionType": "MouseMove_A",
+                    "actionvalue": "MatchedPt"
                 }
             ],
             "unmatchActions": [
