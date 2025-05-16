@@ -1,0 +1,47 @@
+﻿{
+    "name": "识图测试",
+    "hotKey": "F7",
+    "enable": 1,
+    "order": 1,
+    "loopMode": false,
+    "actions": [
+        {
+            "serialNo": 1,
+            "actionType": "DetectImg",
+            "actionvalue": "G://p1.png",
+            "detectconfig": {
+                "searchArea": {
+                    "X": 1730,
+                    "Y": 0,
+                    "Width": 120,
+                    "Height": 90
+                },
+                "threshold": 0.85
+            },
+            "matchActions": [
+                {
+                    "serialNo": 1,
+                    "actionType": "Delay",
+                    "actionvalue": "100"
+                },
+                {
+                    "serialNo": 2,
+                    "actionType": "MouseMove",
+                    "actionvalue": "MatchedPt"
+                }
+            ],
+            "unmatchActions": [
+                {
+                    "serialNo": 1,
+                    "actionType": "Delay",
+                    "actionvalue": "100"
+                },
+                {
+                    "serialNo": 2,
+                    "actionType": "MouseMove",
+                    "actionvalue": "800,240"
+                }
+            ]
+        }
+    ]
+}

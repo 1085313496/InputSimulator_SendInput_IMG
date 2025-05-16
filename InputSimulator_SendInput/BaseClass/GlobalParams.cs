@@ -22,7 +22,7 @@ namespace InputSimulator_SendInput
         /// <summary>
         /// 匹配点名称列表
         /// </summary>
-        public static List<string> lsMatchedPointName = new List<string>() { "MatchedPt", "MatchedPoint", "匹配点" };
+        public static List<string> lsMatchedPointName = new List<string>() { "MatchedPt", "MatchedPoint", "MATCHEDPT", "MATCHEDPOINT", "匹配点" };
 
         #region 虚拟按键代码
         #region

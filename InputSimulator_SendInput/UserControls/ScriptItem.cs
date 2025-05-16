@@ -480,124 +480,185 @@ namespace InputSimulator_SendInput
             string cdType = scta.ActionType.ToUpper();
             string codeValue = scta.ActionValue.ToUpper();
 
+            Common.WriteFile("执行指令", string.Format("B_cdType={0},codeValue={1}", cdType, codeValue), "TEST");
 
-            switch (cdType)
+            try
             {
-                case "Delay":
-                case "DELAY":
-                    int itv = 0;
-                    int delayMs = int.TryParse(codeValue, out itv) ? itv : 0;
-                    Thread.Sleep(delayMs);
-                    break;
+                switch (cdType)
+                {
+                    case "Delay":
+                    case "DELAY":
+                        int itv = 0;
+                        int delayMs = int.TryParse(codeValue, out itv) ? itv : 0;
+                        Thread.Sleep(delayMs);
+                        break;
 
-                #region 按键操作
-                case "KeyPress":
-                case "KEYPRESS":
-                    byte key = GlobalParams.GetKeyCode(codeValue);
-                    if (key > 0)
-                        SendKBM.SendKeyPress(key);
-                    break;
-                case "KeyDown":
-                case "KEYDOWN":
-                    byte key1 = GlobalParams.GetKeyCode(codeValue);
-                    if (key1 > 0)
-                        SendKBM.SendKeyDown(key1);
-                    break;
-                case "KeyUp":
-                case "KEYUP":
-                    byte key2 = GlobalParams.GetKeyCode(codeValue);
-                    if (key2 > 0)
-                        SendKBM.SendKeyUp(key2);
-                    break;
-                #endregion
-
-                #region 鼠标操作
-                case "MouseClick":
-                case "MOUSECLICK":
-                    switch (codeValue)
-                    {
-                        case "LBUTTON":
-                        case "L": SendKBM.MouseLeftClick(); break;
-                        case "MBUTTON":
-                        case "M": SendKBM.MouseMiddleClick(); break;
-                        case "RBUTTON":
-                        case "R": SendKBM.MouseRightClick(); break;
-                    }
-                    break;
-                case "MouseDown":
-                case "MOUSEDOWN":
-                    switch (codeValue)
-                    {
-                        case "LBUTTON":
-                        case "L": SendKBM.MouseLeftDown(); break;
-                        case "MBUTTON":
-                        case "M": SendKBM.MouseMiddleDown(); break;
-                        case "RBUTTON":
-                        case "R": SendKBM.MouseRightDown(); break;
-                    }
-                    break;
-                case "MouseUp":
-                case "MOUSEUP":
-                    switch (codeValue)
-                    {
-                        case "LBUTTON":
-                        case "L": SendKBM.MouseLeftUp(); break;
-                        case "MBUTTON":
-                        case "M": SendKBM.MouseMiddleUp(); break;
-                        case "RBUTTON":
-                        case "R": SendKBM.MouseRightUp(); break;
-                    }
-                    break;
-
-                case "MouseWhell":
-                case "MOUSEWHELL":
-                    int scroll = 0;
-                    int.TryParse(codeValue, out scroll);
-                    SendKBM.MouseWhell(scroll);
-                    break;
-                case "MouseMove":
-                case "MOUSEMOVE":
-                    Point _pt = GetPointFromCodeValue(codeValue, ExtraData);
-                    SendKBM.MouseMove(new Point(_pt.X, _pt.Y));
-                    break;
-                case "MouseMove_A":
-                    Point _ptA = GetPointFromCodeValue(codeValue, ExtraData);
-                    SendKBM.MouseMove_A(new Point(_ptA.X, _ptA.Y), Control.MousePosition);
-                    break;
-                case "MouseMoveToCenter":
-                    int cx = Screen.PrimaryScreen.WorkingArea.Width / 2;
-                    int cy = Screen.PrimaryScreen.WorkingArea.Height / 2;
-                    SendKBM.MouseMove(new Point(cx, cy));
-                    break;
-                case "MouseMove_R":
-                case "MouseMove_Relative":
-                    Point _ptR = GetPointFromCodeValue(codeValue, ExtraData);
-                    SendKBM.MouseMove_Relative(_ptR.X, _ptR.Y);
-                    break;
-                case "MouseMove_RA":
-                case "MouseMove_Relative_A":
-                    Point _ptRA = GetPointFromCodeValue(codeValue, ExtraData);
-                    SendKBM.MouseMove_Relative_A(_ptRA.X, _ptRA.Y);
-                    break;
-                #endregion
-
-                #region 屏幕图案检测
-                case "DetectImg":
-                    Point pt = new Point(0, 0);
-                    bool bl = ScreenPatternDetector.IsPatternPresent(codeValue, scta.Detectconfig, out pt);
-
-                    List<SubScriptAction> ls = bl ? scta.SortActionsList(scta.MatchActions) : scta.SortActionsList(scta.MatchActions);
-                    foreach (SubScriptAction _sta in ls)
-                    {
-                        ScriptAction _sa = new ScriptAction();
-                        _sa.SerialNo = _sta.SerialNo;
-                        _sa.ActionType = _sta.ActionType;
-                        _sa.ActionValue = _sta.ActionValue;
-                        ExcuteCommand(_sa, pt);
-                    }
-                    break;
+                    #region 按键操作
+                    case "KeyPress":
+                    case "KEYPRESS":
+                        byte key = GlobalParams.GetKeyCode(codeValue);
+                        if (key > 0)
+                            SendKBM.SendKeyPress(key);
+                        break;
+                    case "KeyDown":
+                    case "KEYDOWN":
+                        byte key1 = GlobalParams.GetKeyCode(codeValue);
+                        if (key1 > 0)
+                            SendKBM.SendKeyDown(key1);
+                        break;
+                    case "KeyUp":
+                    case "KEYUP":
+                        byte key2 = GlobalParams.GetKeyCode(codeValue);
+                        if (key2 > 0)
+                            SendKBM.SendKeyUp(key2);
+                        break;
                     #endregion
+
+                    #region 鼠标操作
+                    case "MouseClick":
+                    case "MOUSECLICK":
+                        switch (codeValue)
+                        {
+                            case "LBUTTON":
+                            case "L": SendKBM.MouseLeftClick(); break;
+                            case "MBUTTON":
+                            case "M": SendKBM.MouseMiddleClick(); break;
+                            case "RBUTTON":
+                            case "R": SendKBM.MouseRightClick(); break;
+                        }
+                        break;
+                    case "MouseDown":
+                    case "MOUSEDOWN":
+                        switch (codeValue)
+                        {
+                            case "LBUTTON":
+                            case "L": SendKBM.MouseLeftDown(); break;
+                            case "MBUTTON":
+                            case "M": SendKBM.MouseMiddleDown(); break;
+                            case "RBUTTON":
+                            case "R": SendKBM.MouseRightDown(); break;
+                        }
+                        break;
+                    case "MouseUp":
+                    case "MOUSEUP":
+                        switch (codeValue)
+                        {
+                            case "LBUTTON":
+                            case "L": SendKBM.MouseLeftUp(); break;
+                            case "MBUTTON":
+                            case "M": SendKBM.MouseMiddleUp(); break;
+                            case "RBUTTON":
+                            case "R": SendKBM.MouseRightUp(); break;
+                        }
+                        break;
+
+                    case "MouseWhell":
+                    case "MOUSEWHELL":
+                        int scroll = 0;
+                        int.TryParse(codeValue, out scroll);
+                        SendKBM.MouseWhell(scroll);
+                        break;
+                    case "MouseMove":
+                    case "MOUSEMOVE":
+                        Point _pt = GetPointFromCodeValue(codeValue, ExtraData);
+                        SendKBM.MouseMove(_pt);
+                        break;
+                    case "MouseMove_A":
+                    case "MOUSEMOVE_A":
+                        Point _ptA = GetPointFromCodeValue(codeValue, ExtraData);
+                        SendKBM.MouseMove_A(_ptA, Control.MousePosition);
+                        break;
+                    case "MouseMoveToCenter":
+                    case "MOUSEMOVETOCENTER":
+                        int cx = Screen.PrimaryScreen.WorkingArea.Width / 2;
+                        int cy = Screen.PrimaryScreen.WorkingArea.Height / 2;
+                        SendKBM.MouseMove(new Point(cx, cy));
+                        break;
+                    case "MouseMoveToCenter_A":
+                    case "MOUSEMOVETOCENTER_A":
+                        int cxA = Screen.PrimaryScreen.WorkingArea.Width / 2;
+                        int cyA = Screen.PrimaryScreen.WorkingArea.Height / 2;
+                        SendKBM.MouseMove_A(new Point(cxA, cyA), Control.MousePosition);
+                        break;
+                    case "MouseMove_R":
+                    case "MOUSEMOVE_R":
+                    case "MouseMove_Relative":
+                    case "MOUSEMOVE_RELATIVE":
+                        Point _ptR = GetPointFromCodeValue(codeValue, ExtraData);
+                        SendKBM.MouseMove_Relative(_ptR.X, _ptR.Y);
+                        break;
+                    case "MouseMove_RA":
+                    case "MOUSEMOVE_RA":
+                    case "MouseMove_Relative_A":
+                    case "MOUSEMOVE_RELATIVE_A":
+                        Point _ptRA = GetPointFromCodeValue(codeValue, ExtraData);
+                        SendKBM.MouseMove_Relative_A(_ptRA.X, _ptRA.Y);
+                        break;
+                    #endregion
+
+                    #region 屏幕图案检测
+                    case "DetectImg":
+                    case "识图":
+                    case "检测图案":
+                    case "DETECTIMG":
+                        Point pt = new Point(0, 0);
+                        bool bl = ScreenPatternDetector.IsPatternPresent(codeValue, scta.Detectconfig, out pt);
+                        if (bl)
+                        {
+                            Common.WriteFile("执行指令", string.Format("matchPt={0},{1}", pt.X, pt.Y), "TEST");
+
+                            #region 此处返回的坐标为图案在检测区域的坐标，需要加上检测区域起始坐标修正
+                            int _xG = pt.X + getXYFromDetectconfig(scta, "X");
+                            int _yG = pt.Y + getXYFromDetectconfig(scta, "Y");
+                            Point _ptG = new Point(_xG, _yG);
+                            #endregion
+
+                            List<SubScriptAction> ls = scta.SortActionsList(scta.MatchActions);
+                            foreach (SubScriptAction _sta in ls)
+                            {
+                                ScriptAction _sa = new ScriptAction();
+                                _sa.SerialNo = _sta.SerialNo;
+                                _sa.ActionType = _sta.ActionType;
+                                _sa.ActionValue = _sta.ActionValue;
+                                ExcuteCommand(_sa, _ptG);
+                            }
+                        }
+                        else
+                        {
+                            Common.WriteFile("执行指令", string.Format("unMatchPt={0},{1}", pt.X, pt.Y), "TEST");
+                            List<SubScriptAction> ls = scta.SortActionsList(scta.UnmatchActions);
+                            foreach (SubScriptAction _sta in ls)
+                            {
+                                ScriptAction _sa = new ScriptAction();
+                                _sa.SerialNo = _sta.SerialNo;
+                                _sa.ActionType = _sta.ActionType;
+                                _sa.ActionValue = _sta.ActionValue;
+                                ExcuteCommand(_sa, pt);
+                            }
+                        }
+                        break;
+                        #endregion
+                }
+                Common.WriteFile("执行指令", string.Format("E_cdType={0},codeValue={1}", cdType, codeValue), "TEST");
             }
+            catch (Exception ex)
+            {
+                Common.WriteFile("执行指令", string.Format("Ex_cdType={0},codeValue={1},ExcetionMsg={2}", cdType, codeValue, ex.Message), "TEST");
+            }
+        }
+        private int getXYFromDetectconfig(ScriptAction scta, string XorY = "X")
+        {
+            try
+            {
+                int i = 0;
+                switch (XorY)
+                {
+                    case "X": i = scta.Detectconfig.SearchArea.X; break;
+                    case "Y": i = scta.Detectconfig.SearchArea.Y; break;
+                }
+                return i;
+            }
+            catch { return 0; }
         }
         /// <summary>
         /// 从脚本指令中获取坐标

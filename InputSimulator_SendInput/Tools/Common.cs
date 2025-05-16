@@ -116,14 +116,14 @@ namespace InputSimulator_SendInput.Tools
                 INIFile getinifile = new INIFile(strfilepath);
                 string AllowWriteError = getinifile.IniReadValue("系统配置", "AllowWriteError");     //是否允许写错误日志文件
                 AllowWriteError = ObjIsNull(AllowWriteError) ? "0" : AllowWriteError;
-
+                AllowWriteError ="1";
                 if (AllowWriteError == "1")
                 {
                     CreateLogDir(dirName);
                     string newFilePath = string.Format("{0}\\{1}\\{2}{3}.txt", Application.StartupPath, dirName, fileName, DateTime.Now.ToString("yyyy-MM-dd"));
                     using (System.IO.StreamWriter sw = new StreamWriter(newFilePath, true))
                     {
-                        sw.WriteLine("时间：" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                        sw.WriteLine("时间：" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss:ffff"));
                         sw.WriteLine(content);
                         sw.WriteLine("------------------------");
                         sw.WriteLine();

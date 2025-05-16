@@ -3,7 +3,7 @@
     "hotKey": "F8",
     "enable": 1,
     "order": 1,
-    "loopMode": true,
+    "loopMode": false,
     "actions": [
         {
             "serialNo": 1,
@@ -33,11 +33,11 @@
         {
             "serialNo": 6,
             "actionType": "DetectImg",
-            "actionvalue": "C://图片.png",
+            "actionvalue": "G://图片.png",
             "detectconfig": {
                 "searchArea": {
-                    "X": 100,
-                    "Y": 200,
+                    "X": 1820,
+                    "Y": 20,
                     "Width": 300,
                     "Height": 400
                 },
@@ -51,8 +51,28 @@
                 },
                 {
                     "serialNo": 2,
-                    "actionType": "MouseMove_A",
+                    "actionType": "MouseMove",
                     "actionvalue": "MatchedPt"
+                },
+                {
+                    "serialNo": 3,
+                    "actionType": "Delay",
+                    "actionvalue": "700"
+                },
+                {
+                    "serialNo": 4,
+                    "actionType": "MouseMove_R",
+                    "actionvalue": "30,15"
+                },
+                {
+                    "serialNo": 5,
+                    "actionType": "Delay",
+                    "actionvalue": "700"
+                },
+                {
+                    "serialNo": 6,
+                    "actionType": "MOUSECLICK",
+                    "actionvalue": "R"
                 }
             ],
             "unmatchActions": [
@@ -64,9 +84,19 @@
                 {
                     "serialNo": 2,
                     "actionType": "KeyPress",
-                    "actionvalue": "B"
+                    "actionvalue": "Z"
                 }
             ]
+        },
+        {
+            "serialNo": 7,
+            "actionType": "Delay",
+            "actionvalue": "500"
+        },
+        {
+            "serialNo": 8,
+            "actionType": "KeyPress",
+            "actionvalue": "D"
         }
     ]
 }

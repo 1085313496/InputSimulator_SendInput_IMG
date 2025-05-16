@@ -906,7 +906,7 @@ namespace InputSimulator_SendInput
             Input[] input = new Input[1];
             input[0].type = InputType.MOUSE;
 
-            input[0].U.mi.dwFlags = WindowsConstant.MOUSEEVENTF_ABSOLUTE | WindowsConstant.MOUSEEVENTF_MOVE;
+            input[0].U.mi.dwFlags =  WindowsConstant.MOUSEEVENTF_MOVE;
             for (int i = 0; i < movePoints.Count; i++)
             {
                 Point tp = new Point();
