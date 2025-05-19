@@ -233,6 +233,7 @@
             this.vbtn_editListJson.VIBtn_ImgName_Enable = "edit_file_gold";
             this.vbtn_editListJson.VIBtn_ImgName_Hover = "edit_file_lightyellow";
             this.vbtn_editListJson.VIBtn_ShowBorder = false;
+            this.vbtn_editListJson.Visible = false;
             this.vbtn_editListJson.ButtonClicked += new InputSimulator_SendInput.VariableImageButton.ButtonClickedDelegate(this.vbtn_editListJson_ButtonClicked);
             // 
             // vbtn_Refresh
@@ -303,6 +304,7 @@
             this.vbtn_GenerateDicText.VIBtn_ImgName_Enable = "edit_file_gold";
             this.vbtn_GenerateDicText.VIBtn_ImgName_Hover = "edit_file_lightyellow";
             this.vbtn_GenerateDicText.VIBtn_ShowBorder = false;
+            this.vbtn_GenerateDicText.Visible = false;
             this.vbtn_GenerateDicText.ButtonClicked += new InputSimulator_SendInput.VariableImageButton.ButtonClickedDelegate(this.vbtn_GenerateDicText_ButtonClicked);
             // 
             // vbtn_GenerateClassText

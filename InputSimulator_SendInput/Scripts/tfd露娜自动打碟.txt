@@ -1,0 +1,133 @@
+{
+    "Name": "tfd露娜自动打碟",
+    "HotKey": "F8",
+    "Enable": true,
+    "Order": 2,
+    "LoopMode": true,
+    "Actions": [
+        {
+            "SerialNo": 1,
+            "ActionType": "Delay",
+            "ActionValue": "50",
+            "Detectconfig": null,
+            "MatchActions": null,
+            "UnmatchActions": null
+        },
+        {
+            "SerialNo": 2,
+            "ActionType": "DetectImg",
+            "ActionValue": "G://键鼠识图//imgs//tfdlunadj//lunadj0.png",
+            "Detectconfig": {
+                "SearchArea": {
+                    "X": 940,
+                    "Y": 540,
+                    "Width": 60,
+                    "Height": 68
+                },
+                "Threshold": 0.4
+            },
+            "MatchActions": [
+                {
+                    "SerialNo": 1,
+                    "ActionType": "KeyPress",
+                    "ActionValue": "C"
+                },
+                {
+                    "SerialNo": 2,
+                    "ActionType": "Delay",
+                    "ActionValue": "100"
+                }
+            ],
+            "UnmatchActions": [
+                
+            ]
+        },
+        {
+            "SerialNo": 3,
+            "ActionType": "DetectImg",
+            "ActionValue": "G://键鼠识图//imgs//tfdlunadj//lunadj1.png",
+            "Detectconfig": {
+                "SearchArea": {
+                    "X": 940,
+                    "Y": 545,
+                    "Width": 60,
+                    "Height": 70
+                },
+                "Threshold": 0.4
+            },
+            "MatchActions": [
+                {
+                    "SerialNo": 1,
+                    "ActionType": "KeyPress",
+                    "ActionValue": "V"
+                },
+                {
+                    "SerialNo": 2,
+                    "ActionType": "Delay",
+                    "ActionValue": "100"
+                }
+            ],
+            "UnmatchActions": [
+                
+            ]
+        },
+        {
+            "SerialNo": 4,
+            "ActionType": "DetectImg",
+            "ActionValue": "G://键鼠识图//imgs//tfdlunadj//lunadj2.png",
+            "Detectconfig": {
+                "SearchArea": {
+                    "X": 940,
+                    "Y": 545,
+                    "Width": 60,
+                    "Height": 70
+                },
+                "Threshold": 0.4
+            },
+            "MatchActions": [
+                {
+                    "SerialNo": 1,
+                    "ActionType": "KeyPress",
+                    "ActionValue": "Z"
+                },
+                {
+                    "SerialNo": 2,
+                    "ActionType": "Delay",
+                    "ActionValue": "100"
+                }
+            ],
+            "UnmatchActions": [
+                
+            ]
+        },
+        {
+            "SerialNo": 5,
+            "ActionType": "DetectImg",
+            "ActionValue": "G://键鼠识图//imgs//tfdlunadj//lunadj3.png",
+            "Detectconfig": {
+                "SearchArea": {
+                    "X": 940,
+                    "Y": 545,
+                    "Width": 60,
+                    "Height": 70
+                },
+                "Threshold": 0.4
+            },
+            "MatchActions": [
+                {
+                    "SerialNo": 1,
+                    "ActionType": "KeyPress",
+                    "ActionValue": "C"
+                },
+                {
+                    "SerialNo": 2,
+                    "ActionType": "Delay",
+                    "ActionValue": "100"
+                }
+            ],
+            "UnmatchActions": [
+                
+            ]
+        }
+    ]
+}

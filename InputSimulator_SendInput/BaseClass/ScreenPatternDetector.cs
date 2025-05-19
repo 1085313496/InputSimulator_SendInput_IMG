@@ -102,7 +102,7 @@ namespace InputSimulator_SendInput
             // 1. 截取屏幕图像
             using (var screenBitmap = CaptureScreen(captureArea))
             {
-                screenBitmap.Save("screen.png", System.Drawing.Imaging.ImageFormat.Png); // 保存截屏图像以供调试
+              //  screenBitmap.Save("screen.png", System.Drawing.Imaging.ImageFormat.Png); // 保存截屏图像以供调试
 
                 // 2. 将Bitmap转换为OpenCV的Mat格式（并转换为RGB）
                 using (Mat screenMat = BitmapToMat(screenBitmap))

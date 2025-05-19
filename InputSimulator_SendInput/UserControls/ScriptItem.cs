@@ -480,32 +480,41 @@ namespace InputSimulator_SendInput
             string cdType = scta.ActionType.ToUpper();
             string codeValue = scta.ActionValue.ToUpper();
 
-            Common.WriteFile("执行指令", string.Format("B_cdType={0},codeValue={1}", cdType, codeValue), "TEST");
+            //Common.WriteFile("执行指令", string.Format("B_cdType={0},codeValue={1}", cdType, codeValue), "TEST");
 
             try
             {
                 switch (cdType)
                 {
+                    #region 延时
                     case "Delay":
                     case "DELAY":
                         int itv = 0;
                         int delayMs = int.TryParse(codeValue, out itv) ? itv : 0;
                         Thread.Sleep(delayMs);
                         break;
+                    #endregion
 
                     #region 按键操作
+                    #region 按下并释放按键
                     case "KeyPress":
                     case "KEYPRESS":
                         byte key = GlobalParams.GetKeyCode(codeValue);
                         if (key > 0)
                             SendKBM.SendKeyPress(key);
                         break;
+                    #endregion
+
+                    #region 按住按键
                     case "KeyDown":
                     case "KEYDOWN":
                         byte key1 = GlobalParams.GetKeyCode(codeValue);
                         if (key1 > 0)
                             SendKBM.SendKeyDown(key1);
                         break;
+                    #endregion
+
+                    #region 释放按键
                     case "KeyUp":
                     case "KEYUP":
                         byte key2 = GlobalParams.GetKeyCode(codeValue);
@@ -513,8 +522,10 @@ namespace InputSimulator_SendInput
                             SendKBM.SendKeyUp(key2);
                         break;
                     #endregion
+                    #endregion
 
                     #region 鼠标操作
+                    #region 点击鼠标按键
                     case "MouseClick":
                     case "MOUSECLICK":
                         switch (codeValue)
@@ -527,6 +538,9 @@ namespace InputSimulator_SendInput
                             case "R": SendKBM.MouseRightClick(); break;
                         }
                         break;
+                    #endregion
+
+                    #region 按住鼠标按键
                     case "MouseDown":
                     case "MOUSEDOWN":
                         switch (codeValue)
@@ -539,6 +553,9 @@ namespace InputSimulator_SendInput
                             case "R": SendKBM.MouseRightDown(); break;
                         }
                         break;
+                    #endregion
+
+                    #region 释放鼠标按键
                     case "MouseUp":
                     case "MOUSEUP":
                         switch (codeValue)
@@ -551,35 +568,55 @@ namespace InputSimulator_SendInput
                             case "R": SendKBM.MouseRightUp(); break;
                         }
                         break;
+                    #endregion
 
+                    #region 滑动鼠标滚轮
                     case "MouseWhell":
                     case "MOUSEWHELL":
                         int scroll = 0;
                         int.TryParse(codeValue, out scroll);
                         SendKBM.MouseWhell(scroll);
                         break;
+                    #endregion
+
+
+                    #region 鼠标出现在指定坐标
                     case "MouseMove":
                     case "MOUSEMOVE":
                         Point _pt = GetPointFromCodeValue(codeValue, ExtraData);
                         SendKBM.MouseMove(_pt);
                         break;
+                    #endregion
+
+                    #region 鼠标移动到指定坐标
                     case "MouseMove_A":
                     case "MOUSEMOVE_A":
                         Point _ptA = GetPointFromCodeValue(codeValue, ExtraData);
                         SendKBM.MouseMove_A(_ptA, Control.MousePosition);
                         break;
+                    #endregion
+
+
+                    #region 鼠标出现在屏幕中心
                     case "MouseMoveToCenter":
                     case "MOUSEMOVETOCENTER":
                         int cx = Screen.PrimaryScreen.WorkingArea.Width / 2;
                         int cy = Screen.PrimaryScreen.WorkingArea.Height / 2;
                         SendKBM.MouseMove(new Point(cx, cy));
                         break;
+                    #endregion
+
+                    #region 鼠标移动到屏幕中心
                     case "MouseMoveToCenter_A":
                     case "MOUSEMOVETOCENTER_A":
                         int cxA = Screen.PrimaryScreen.WorkingArea.Width / 2;
                         int cyA = Screen.PrimaryScreen.WorkingArea.Height / 2;
                         SendKBM.MouseMove_A(new Point(cxA, cyA), Control.MousePosition);
                         break;
+                    #endregion
+
+
+                    #region 鼠标相对坐标移动 无轨迹
                     case "MouseMove_R":
                     case "MOUSEMOVE_R":
                     case "MouseMove_Relative":
@@ -587,6 +624,9 @@ namespace InputSimulator_SendInput
                         Point _ptR = GetPointFromCodeValue(codeValue, ExtraData);
                         SendKBM.MouseMove_Relative(_ptR.X, _ptR.Y);
                         break;
+                    #endregion
+
+                    #region 鼠标相对坐标移动（带轨迹）
                     case "MouseMove_RA":
                     case "MOUSEMOVE_RA":
                     case "MouseMove_Relative_A":
@@ -594,6 +634,7 @@ namespace InputSimulator_SendInput
                         Point _ptRA = GetPointFromCodeValue(codeValue, ExtraData);
                         SendKBM.MouseMove_Relative_A(_ptRA.X, _ptRA.Y);
                         break;
+                    #endregion
                     #endregion
 
                     #region 屏幕图案检测
@@ -605,7 +646,8 @@ namespace InputSimulator_SendInput
                         bool bl = ScreenPatternDetector.IsPatternPresent(codeValue, scta.Detectconfig, out pt);
                         if (bl)
                         {
-                            Common.WriteFile("执行指令", string.Format("matchPt={0},{1}", pt.X, pt.Y), "TEST");
+                            #region 有图案
+                           // Common.WriteFile("执行指令", string.Format("matchPt={0},{1}", pt.X, pt.Y), "TEST");
 
                             #region 此处返回的坐标为图案在检测区域的坐标，需要加上检测区域起始坐标修正
                             int _xG = pt.X + getXYFromDetectconfig(scta, "X");
@@ -622,10 +664,12 @@ namespace InputSimulator_SendInput
                                 _sa.ActionValue = _sta.ActionValue;
                                 ExcuteCommand(_sa, _ptG);
                             }
+                            #endregion
                         }
                         else
                         {
-                            Common.WriteFile("执行指令", string.Format("unMatchPt={0},{1}", pt.X, pt.Y), "TEST");
+                            #region 无图案
+                           // Common.WriteFile("执行指令", string.Format("unMatchPt={0},{1}", pt.X, pt.Y), "TEST");
                             List<SubScriptAction> ls = scta.SortActionsList(scta.UnmatchActions);
                             foreach (SubScriptAction _sta in ls)
                             {
@@ -635,17 +679,24 @@ namespace InputSimulator_SendInput
                                 _sa.ActionValue = _sta.ActionValue;
                                 ExcuteCommand(_sa, pt);
                             }
+                            #endregion
                         }
                         break;
                         #endregion
                 }
-                Common.WriteFile("执行指令", string.Format("E_cdType={0},codeValue={1}", cdType, codeValue), "TEST");
+               // Common.WriteFile("执行指令", string.Format("E_cdType={0},codeValue={1}", cdType, codeValue), "TEST");
             }
             catch (Exception ex)
             {
-                Common.WriteFile("执行指令", string.Format("Ex_cdType={0},codeValue={1},ExcetionMsg={2}", cdType, codeValue, ex.Message), "TEST");
+                //Common.WriteFile("执行指令", string.Format("Ex_cdType={0},codeValue={1},ExcetionMsg={2}", cdType, codeValue, ex.Message), "TEST");
             }
         }
+        /// <summary>
+        /// 获取图案检测区域的起始坐标
+        /// </summary>
+        /// <param name="scta"></param>
+        /// <param name="XorY"></param>
+        /// <returns></returns>
         private int getXYFromDetectconfig(ScriptAction scta, string XorY = "X")
         {
             try
