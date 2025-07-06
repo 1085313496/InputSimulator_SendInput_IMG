@@ -1,14 +1,14 @@
 {
-    "Name": "tfd露娜自动打碟",
-    "HotKey": "F8",
+    "Name": "tfd-露娜自动打碟",
+    "HotKey": "F5",
     "Enable": true,
-    "Order": 2,
+    "Order": 5,
     "LoopMode": true,
     "Actions": [
         {
             "SerialNo": 1,
             "ActionType": "Delay",
-            "ActionValue": "50",
+            "ActionValue": "120",
             "Detectconfig": null,
             "MatchActions": null,
             "UnmatchActions": null
@@ -19,10 +19,10 @@
             "ActionValue": "G://键鼠识图//imgs//tfdlunadj//lunadj0.png",
             "Detectconfig": {
                 "SearchArea": {
-                    "X": 940,
-                    "Y": 540,
+                    "X": 930,
+                    "Y": 530,
                     "Width": 60,
-                    "Height": 68
+                    "Height": 70
                 },
                 "Threshold": 0.4
             },
@@ -35,11 +35,10 @@
                 {
                     "SerialNo": 2,
                     "ActionType": "Delay",
-                    "ActionValue": "100"
+                    "ActionValue": "120"
                 }
             ],
-            "UnmatchActions": [
-                
+            "UnmatchActions": [            
             ]
         },
         {
@@ -48,8 +47,8 @@
             "ActionValue": "G://键鼠识图//imgs//tfdlunadj//lunadj1.png",
             "Detectconfig": {
                 "SearchArea": {
-                    "X": 940,
-                    "Y": 545,
+                    "X": 930,
+                    "Y": 530,
                     "Width": 60,
                     "Height": 70
                 },
@@ -64,7 +63,7 @@
                 {
                     "SerialNo": 2,
                     "ActionType": "Delay",
-                    "ActionValue": "100"
+                    "ActionValue": "120"
                 }
             ],
             "UnmatchActions": [
@@ -77,8 +76,8 @@
             "ActionValue": "G://键鼠识图//imgs//tfdlunadj//lunadj2.png",
             "Detectconfig": {
                 "SearchArea": {
-                    "X": 940,
-                    "Y": 545,
+                    "X": 930,
+                    "Y": 530,
                     "Width": 60,
                     "Height": 70
                 },
@@ -93,7 +92,7 @@
                 {
                     "SerialNo": 2,
                     "ActionType": "Delay",
-                    "ActionValue": "100"
+                    "ActionValue": "120"
                 }
             ],
             "UnmatchActions": [
@@ -106,8 +105,8 @@
             "ActionValue": "G://键鼠识图//imgs//tfdlunadj//lunadj3.png",
             "Detectconfig": {
                 "SearchArea": {
-                    "X": 940,
-                    "Y": 545,
+                    "X": 930,
+                    "Y": 530,
                     "Width": 60,
                     "Height": 70
                 },
@@ -122,7 +121,7 @@
                 {
                     "SerialNo": 2,
                     "ActionType": "Delay",
-                    "ActionValue": "100"
+                    "ActionValue": "120"
                 }
             ],
             "UnmatchActions": [

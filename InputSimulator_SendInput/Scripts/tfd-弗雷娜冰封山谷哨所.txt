@@ -1,0 +1,89 @@
+{
+    "Name": "tfd-弗雷娜冰封山谷哨所",
+    "HotKey": "F8",
+    "Enable": false,
+    "Order": 3,
+    "LoopMode": true,
+    "Actions": [
+        {
+            "SerialNo": 1,
+            "ActionType": "Delay",
+            "ActionValue": 134
+        },
+        {
+            "SerialNo": 2,
+            "ActionType": "KeyDown",
+            "ActionValue": "W"
+        },
+        {
+            "SerialNo": 3,
+            "ActionType": "Delay",
+            "ActionValue": 2500
+        },
+        {
+            "SerialNo": 4,
+            "ActionType": "KeyUp",
+            "ActionValue": "W"
+        },
+        {
+            "SerialNo": 5,
+            "ActionType": "Delay",
+            "ActionValue": 100
+        },
+        {
+            "SerialNo": 6,
+            "ActionType": "KeyDown",
+            "ActionValue": "C"
+        },
+        {
+            "SerialNo": 7,
+            "ActionType": "Delay",
+            "ActionValue": 134
+        },
+        {
+            "SerialNo": 8,
+            "ActionType": "KeyUp",
+            "ActionValue": "C"
+        },
+        {
+            "SerialNo": 9,
+            "ActionType": "Delay",
+            "ActionValue": 100
+        },
+        {
+            "SerialNo": 10,
+            "ActionType": "KeyDown",
+            "ActionValue": "S"
+        },
+        {
+            "SerialNo": 11,
+            "ActionType": "Delay",
+            "ActionValue": 2300
+        },
+        {
+            "SerialNo": 12,
+            "ActionType": "KeyUp",
+            "ActionValue": "S"
+        },
+        {
+            "SerialNo": 13,
+            "ActionType": "Delay",
+            "ActionValue": 110
+        },
+        {
+            "SerialNo": 14,
+            "ActionType": "KeyDown",
+            "ActionValue": "V"
+        },
+        {
+            "SerialNo": 15,
+            "ActionType": "Delay",
+            "ActionValue": 134
+        },
+        {
+            "SerialNo": 16,
+            "ActionType": "KeyUp",
+            "ActionValue": "V"
+        }
+    ]
+}

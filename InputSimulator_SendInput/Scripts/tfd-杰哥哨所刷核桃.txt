@@ -1,0 +1,64 @@
+{
+    "Name": "tfd-杰哥哨所刷核桃",
+    "HotKey": "F7",
+    "Enable": false,
+    "Order": 2,
+    "LoopMode": true,
+    "Actions": [
+        {
+            "SerialNo": 1,
+            "ActionType": "Delay",
+            "ActionValue": 300
+        },
+        {
+            "SerialNo": 2,
+            "ActionType": "KeyDown",
+            "ActionValue": "W"
+        },
+        {
+            "SerialNo": 3,
+            "ActionType": "Delay",
+            "ActionValue": 550
+        },
+        {
+            "SerialNo": 4,
+            "ActionType": "KeyUp",
+            "ActionValue": "W"
+        },
+        {
+            "SerialNo": 5,
+            "ActionType": "Delay",
+            "ActionValue": 200
+        },
+        {
+            "SerialNo": 6,
+            "ActionType": "KeyPress",
+            "ActionValue": "V"
+        },
+        {
+            "SerialNo": 7,
+            "ActionType": "Delay",
+            "ActionValue": 500
+        },
+        {
+            "SerialNo": 8,
+            "ActionType": "KeyDown",
+            "ActionValue": "S"
+        },
+        {
+            "SerialNo": 9,
+            "ActionType": "Delay",
+            "ActionValue": 400
+        },
+        {
+            "SerialNo": 10,
+            "ActionType": "KeyUp",
+            "ActionValue": "S"
+        },
+        {
+            "SerialNo": 11,
+            "ActionType": "Delay",
+            "ActionValue": 200
+        }
+    ]
+}

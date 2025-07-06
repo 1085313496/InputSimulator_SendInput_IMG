@@ -1,0 +1,99 @@
+{
+    "Name": "tfd-弗雷娜冰封山谷哨所-中断任务",
+    "HotKey": "F9",
+    "Enable": false,
+    "Order": 4,
+    "LoopMode": true,
+    "Actions": [
+        {
+            "SerialNo": 1,
+            "ActionType": "Delay",
+            "ActionValue": 300
+        },
+        {
+            "SerialNo": 2,
+            "ActionType": "KeyDown",
+            "ActionValue": "W"
+        },
+        {
+            "SerialNo": 3,
+            "ActionType": "Delay",
+            "ActionValue": 2500
+        },
+        {
+            "SerialNo": 4,
+            "ActionType": "KeyUp",
+            "ActionValue": "W"
+        },
+        {
+            "SerialNo": 5,
+            "ActionType": "Delay",
+            "ActionValue": 100
+        },
+        {
+            "SerialNo": 6,
+            "ActionType": "KeyDown",
+            "ActionValue": "Q"
+        },
+        {
+            "SerialNo": 7,
+            "ActionType": "Delay",
+            "ActionValue": 134
+        },
+        {
+            "SerialNo": 8,
+            "ActionType": "KeyUp",
+            "ActionValue": "C"
+        },
+        {
+            "SerialNo": 9,
+            "ActionType": "Delay",
+            "ActionValue": 100
+        },
+        {
+            "SerialNo": 10,
+            "ActionType": "KeyDown",
+            "ActionValue": "S"
+        },
+        {
+            "SerialNo": 11,
+            "ActionType": "Delay",
+            "ActionValue": 2300
+        },
+        {
+            "SerialNo": 12,
+            "ActionType": "KeyUp",
+            "ActionValue": "S"
+        },
+        {
+            "SerialNo": 13,
+            "ActionType": "Delay",
+            "ActionValue": 110
+        },
+        {
+            "SerialNo": 14,
+            "ActionType": "KeyPress",
+            "ActionValue": "L"
+        },
+        {
+            "SerialNo": 15,
+            "ActionType": "Delay",
+            "ActionValue": 300
+        },
+        {
+            "SerialNo": 16,
+            "ActionType": "MouseMove_RA",
+            "ActionValue": "-200,-20"
+        },
+        {
+            "SerialNo": 17,
+            "ActionType": "Delay",
+            "ActionValue": 200
+        },
+        {
+            "SerialNo": 18,
+            "ActionType": "MouseClick",
+            "ActionValue": "LBUTTON"
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+﻿{
+    "name": "鼠标移动测试",
+    "hotKey": "F8",
+    "enable": 1,
+    "order": 1,
+    "loopMode": false,
+    "actions": [
+        {
+            "serialNo": 1,
+            "actionType": "MouseMove_R",
+            "actionvalue": "-100,20"
+        },
+        {
+            "serialNo":2,
+            "actionType": "Delay",
+            "actionvalue": "500"
+        }        
+    ]
+}

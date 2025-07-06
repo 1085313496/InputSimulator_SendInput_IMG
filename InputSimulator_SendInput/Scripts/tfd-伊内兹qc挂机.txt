@@ -1,0 +1,34 @@
+{
+    "Name": "tfd-伊内兹qc挂机",
+    "HotKey": "F7",
+    "Enable": false,
+    "Order": 0,
+    "LoopMode": true,
+    "Actions": [
+        {
+            "SerialNo": 1,
+            "ActionType": "Delay",
+            "ActionValue": 100
+        },
+        {
+            "SerialNo": 2,
+            "ActionType": "KeyPress",
+            "ActionValue": "Q"
+        },
+        {
+            "SerialNo": 3,
+            "ActionType": "Delay",
+            "ActionValue": 600
+        },
+        {
+            "SerialNo": 4,
+            "ActionType": "KeyPress",
+            "ActionValue": "C"
+        },
+        {
+            "SerialNo": 5,
+            "ActionType": "Delay",
+            "ActionValue": 600
+        }
+    ]
+}

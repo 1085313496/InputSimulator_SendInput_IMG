@@ -632,7 +632,7 @@ namespace InputSimulator_SendInput
                     case "MouseMove_Relative_A":
                     case "MOUSEMOVE_RELATIVE_A":
                         Point _ptRA = GetPointFromCodeValue(codeValue, ExtraData);
-                        SendKBM.MouseMove_Relative_A(_ptRA.X, _ptRA.Y);
+                        SendKBM.MouseMove_Relative_A(_ptRA.X, _ptRA.Y,10);
                         break;
                     #endregion
                     #endregion
@@ -666,7 +666,7 @@ namespace InputSimulator_SendInput
                         }
                         else
                         {
-                           // Common.WriteFile("执行指令", string.Format("unMatchPt={0},{1}", pt.X, pt.Y), "TEST");
+                            //Common.WriteFile("执行指令", string.Format("unMatchPt={0},{1}", pt.X, pt.Y), "TEST");
                             List<SubScriptAction> ls = scta.SortActionsList(scta.UnmatchActions);
                             foreach (SubScriptAction _sta in ls)
                             {
@@ -680,7 +680,7 @@ namespace InputSimulator_SendInput
                         break;
                         #endregion
                 }
-              //  Common.WriteFile("执行指令", string.Format("E_cdType={0},codeValue={1}", cdType, codeValue), "TEST");
+                //Common.WriteFile("执行指令", string.Format("E_cdType={0},codeValue={1}", cdType, codeValue), "TEST");
             }
             catch (Exception ex)
             {
