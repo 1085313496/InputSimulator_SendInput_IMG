@@ -646,8 +646,7 @@ namespace InputSimulator_SendInput
                         bool bl = ScreenPatternDetector.IsPatternPresent(codeValue, scta.Detectconfig, out pt);
                         if (bl)
                         {
-                            #region 有图案
-                           // Common.WriteFile("执行指令", string.Format("matchPt={0},{1}", pt.X, pt.Y), "TEST");
+                            //Common.WriteFile("执行指令", string.Format("matchPt={0},{1}", pt.X, pt.Y), "TEST");
 
                             #region 此处返回的坐标为图案在检测区域的坐标，需要加上检测区域起始坐标修正
                             int _xG = pt.X + getXYFromDetectconfig(scta, "X");
@@ -664,11 +663,9 @@ namespace InputSimulator_SendInput
                                 _sa.ActionValue = _sta.ActionValue;
                                 ExcuteCommand(_sa, _ptG);
                             }
-                            #endregion
                         }
                         else
                         {
-                            #region 无图案
                            // Common.WriteFile("执行指令", string.Format("unMatchPt={0},{1}", pt.X, pt.Y), "TEST");
                             List<SubScriptAction> ls = scta.SortActionsList(scta.UnmatchActions);
                             foreach (SubScriptAction _sta in ls)
@@ -679,12 +676,11 @@ namespace InputSimulator_SendInput
                                 _sa.ActionValue = _sta.ActionValue;
                                 ExcuteCommand(_sa, pt);
                             }
-                            #endregion
                         }
                         break;
                         #endregion
                 }
-               // Common.WriteFile("执行指令", string.Format("E_cdType={0},codeValue={1}", cdType, codeValue), "TEST");
+              //  Common.WriteFile("执行指令", string.Format("E_cdType={0},codeValue={1}", cdType, codeValue), "TEST");
             }
             catch (Exception ex)
             {

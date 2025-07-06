@@ -120,6 +120,7 @@
             this.vibtn_Edit.VIBtn_ImgName_Enable = "edit_bluepurple";
             this.vibtn_Edit.VIBtn_ImgName_Hover = "edit_grey";
             this.vibtn_Edit.VIBtn_ShowBorder = false;
+            this.vibtn_Edit.Visible = false;
             this.vibtn_Edit.ButtonClicked += new InputSimulator_SendInput.VariableImageButton.ButtonClickedDelegate(this.vibtn_Edit_ButtonClicked);
             // 
             // vibtn_Play
