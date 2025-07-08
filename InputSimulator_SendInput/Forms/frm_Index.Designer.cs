@@ -264,6 +264,7 @@
             this.vbtn_AddScript.BackColor = System.Drawing.Color.Transparent;
             this.vbtn_AddScript.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.vbtn_AddScript.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.vbtn_AddScript.Enabled = false;
             this.vbtn_AddScript.HoverTips = "添加脚本";
             this.vbtn_AddScript.Location = new System.Drawing.Point(13, 7);
             this.vbtn_AddScript.Name = "vbtn_AddScript";

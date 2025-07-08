@@ -20,11 +20,11 @@
             "Detectconfig": {
                 "SearchArea": {
                     "X": 930,
-                    "Y": 530,
+                    "Y": 540,
                     "Width": 60,
-                    "Height": 70
+                    "Height": 60
                 },
-                "Threshold": 0.4
+                "Threshold": 0.7
             },
             "MatchActions": [
                 {
@@ -38,7 +38,8 @@
                     "ActionValue": "120"
                 }
             ],
-            "UnmatchActions": [            
+            "UnmatchActions": [
+                
             ]
         },
         {
@@ -48,11 +49,11 @@
             "Detectconfig": {
                 "SearchArea": {
                     "X": 930,
-                    "Y": 530,
+                    "Y": 540,
                     "Width": 60,
-                    "Height": 70
+                    "Height": 60
                 },
-                "Threshold": 0.4
+                "Threshold": 0.7
             },
             "MatchActions": [
                 {
@@ -77,11 +78,11 @@
             "Detectconfig": {
                 "SearchArea": {
                     "X": 930,
-                    "Y": 530,
+                    "Y": 540,
                     "Width": 60,
-                    "Height": 70
+                    "Height": 60
                 },
-                "Threshold": 0.4
+                "Threshold": 0.7
             },
             "MatchActions": [
                 {
@@ -106,11 +107,11 @@
             "Detectconfig": {
                 "SearchArea": {
                     "X": 930,
-                    "Y": 530,
+                    "Y": 540,
                     "Width": 60,
-                    "Height": 70
+                    "Height": 60
                 },
-                "Threshold": 0.4
+                "Threshold": 0.7
             },
             "MatchActions": [
                 {
