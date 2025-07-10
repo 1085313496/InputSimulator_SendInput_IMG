@@ -56,7 +56,10 @@ namespace InputSimulator_SendInput.BaseClass
         /// 动作对应的值 时间间隔、按键值、鼠标坐标等
         /// </summary>
         public string ActionValue { get; set; }
-
+        /// <summary>
+        /// 是否用灰度图像进行识别
+        /// </summary>
+        public bool Grayscale { get; set; }
         /// <summary>
         /// 图像识别配置
         /// </summary>

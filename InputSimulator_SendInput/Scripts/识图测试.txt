@@ -8,7 +8,8 @@
         {
             "serialNo": 1,
             "actionType": "DetectImg",
-            "actionvalue": "G://p1.png",
+            "actionvalue": "p1.png",
+            "grayscale": false,
             "detectconfig": {
                 "searchArea": {
                     "X": 1730,
@@ -16,7 +17,7 @@
                     "Width": 120,
                     "Height": 90
                 },
-                "threshold": 0.85
+                "threshold": 0.65
             },
             "matchActions": [
                 {
@@ -39,7 +40,7 @@
                 {
                     "serialNo": 2,
                     "actionType": "MouseMove",
-                    "actionvalue": "800,240"
+                    "actionvalue": "1000,240"
                 }
             ]
         }

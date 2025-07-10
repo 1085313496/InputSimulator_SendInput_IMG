@@ -632,7 +632,7 @@ namespace InputSimulator_SendInput
                     case "MouseMove_Relative_A":
                     case "MOUSEMOVE_RELATIVE_A":
                         Point _ptRA = GetPointFromCodeValue(codeValue, ExtraData);
-                        SendKBM.MouseMove_Relative_A(_ptRA.X, _ptRA.Y,10);
+                        SendKBM.MouseMove_Relative_A(_ptRA.X, _ptRA.Y, 10);
                         break;
                     #endregion
                     #endregion
@@ -643,7 +643,14 @@ namespace InputSimulator_SendInput
                     case "检测图案":
                     case "DETECTIMG":
                         Point pt = new Point(0, 0);
-                        bool bl = ScreenPatternDetector.IsPatternPresent(codeValue, scta.Detectconfig, out pt);
+                        string _imgPath = codeValue;
+                        bool _bl0 = Path.IsPathRooted(_imgPath);
+                        if (!_bl0)
+                        {
+                            _imgPath = string.Format("{0}\\{1}", Application.StartupPath, codeValue);
+                        }
+
+                        bool bl = ScreenPatternDetector.IsPatternPresent(_imgPath, scta.Detectconfig, out pt, scta.Grayscale);
                         if (bl)
                         {
                             //Common.WriteFile("执行指令", string.Format("matchPt={0},{1}", pt.X, pt.Y), "TEST");
@@ -700,8 +707,8 @@ namespace InputSimulator_SendInput
                 int i = 0;
                 switch (XorY)
                 {
-                    case "X": i = scta.Detectconfig.SearchArea.X; break;
-                    case "Y": i = scta.Detectconfig.SearchArea.Y; break;
+                    case "X": i = scta.Detectconfig == null || scta.Detectconfig.SearchArea == null ? 0 : scta.Detectconfig.SearchArea.X; break;
+                    case "Y": i = scta.Detectconfig == null || scta.Detectconfig.SearchArea == null ? 0 : scta.Detectconfig.SearchArea.Y; break;
                 }
                 return i;
             }
