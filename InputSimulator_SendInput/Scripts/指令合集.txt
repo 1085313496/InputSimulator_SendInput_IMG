@@ -97,6 +97,11 @@
             "serialNo": 8,
             "actionType": "KeyPress",
             "actionvalue": "D"
+        }, 
+        {
+            "serialNo": 9,
+            "actionType": "MouseMove_R",
+            "actionvalue": "-100,20"
         }
     ]
 }

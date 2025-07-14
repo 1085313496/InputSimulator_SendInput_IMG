@@ -27,7 +27,7 @@ namespace InputSimulator_SendInput
         {
             InitPage();
 
-           // new treeViewTest().Show();
+            new treeViewTest().Show();
         }
 
         private void InitPage()

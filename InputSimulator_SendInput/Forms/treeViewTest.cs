@@ -39,7 +39,8 @@ namespace InputSimulator_SendInput.Forms
                     return;
 
                 List<ScriptAction> ls = SCT.Actions;
-                TreeNode tnRt = new TreeNode("actions_脚本内容");
+                //TreeNode tnRt = new TreeNode("actions_脚本内容");
+                TreeNode tnRt = new TreeNode("actions");
                 tv.Nodes.Add(tnRt);
 
                 foreach (ScriptAction a in ls)
@@ -121,15 +122,19 @@ namespace InputSimulator_SendInput.Forms
                 TreeNode DragNode = myNode;
                 // 将被拖拽节点从原来位置删除。
                 myNode.Remove();
+
+                int insertIndex = DropNode.Index;
+                DropNode.Parent.Nodes.Insert(insertIndex, DragNode);
+
                 // 在目标节点下增加被拖拽节点
-                DropNode.Nodes.Add(DragNode);
+               // DropNode.Nodes.Add(DragNode);
             }
             // 如果目标节点不存在，即拖拽的位置不存在节点，那么就将被拖拽节点放在根节点之下
             if (DropNode == null)
             {
                 TreeNode DragNode = myNode;
                 myNode.Remove();
-                tv.Nodes.Add(DragNode);
+                tv.Nodes[0].Nodes.Add(DragNode);
             }
         }
 
