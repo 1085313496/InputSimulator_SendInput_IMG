@@ -1,4 +1,5 @@
 ﻿using InputSimulator_SendInput.BaseClass;
+using InputSimulator_SendInput.Forms;
 using InputSimulator_SendInput.Tools;
 using Newtonsoft.Json;
 using System;
@@ -25,6 +26,8 @@ namespace InputSimulator_SendInput
         private void frm_Index_Load(object sender, EventArgs e)
         {
             InitPage();
+
+           // new treeViewTest().Show();
         }
 
         private void InitPage()

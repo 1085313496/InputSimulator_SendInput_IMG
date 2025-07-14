@@ -29,7 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmScriptEditor));
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("节点0");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("节点3");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("节点4");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("节点1", new System.Windows.Forms.TreeNode[] {
+            treeNode2,
+            treeNode3});
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("节点2");
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmScriptEditor_V2));
             this.rtb_Codes = new System.Windows.Forms.RichTextBox();
             this.flp_CodeType = new System.Windows.Forms.FlowLayoutPanel();
             this.button200 = new System.Windows.Forms.Button();
@@ -46,7 +53,6 @@
             this.lb_Selectedtype = new System.Windows.Forms.Label();
             this.lb_SelectedKey = new System.Windows.Forms.Label();
             this.lb_codeTips = new System.Windows.Forms.Label();
-            this.vbtn_AddCode = new InputSimulator_SendInput.VariableImageButton();
             this.tb_newCode = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.tb_SavePath = new System.Windows.Forms.TextBox();
@@ -59,9 +65,11 @@
             this.tb_ShowOrder = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.btn_SaveScript = new System.Windows.Forms.Button();
-            this.swb_ActiveState = new InputSimulator_SendInput.SwitchBar();
             this.label10 = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.vbtn_AddCode = new InputSimulator_SendInput.VariableImageButton();
+            this.swb_ActiveState = new InputSimulator_SendInput.SwitchBar();
             this.flp_CodeType.SuspendLayout();
             this.flp_Keys.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -79,7 +87,7 @@
             this.rtb_Codes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.rtb_Codes.Location = new System.Drawing.Point(0, 86);
             this.rtb_Codes.Name = "rtb_Codes";
-            this.rtb_Codes.Size = new System.Drawing.Size(248, 433);
+            this.rtb_Codes.Size = new System.Drawing.Size(249, 433);
             this.rtb_Codes.TabIndex = 2;
             this.rtb_Codes.Text = "Delay(100);\nKeyPress(V);";
             this.rtb_Codes.Leave += new System.EventHandler(this.rtb_Leave);
@@ -238,7 +246,7 @@
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(21, 61);
+            this.label3.Location = new System.Drawing.Point(22, 61);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 20);
             this.label3.TabIndex = 4;
@@ -274,35 +282,10 @@
             this.lb_codeTips.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lb_codeTips.Location = new System.Drawing.Point(58, 7);
             this.lb_codeTips.Name = "lb_codeTips";
-            this.lb_codeTips.Size = new System.Drawing.Size(189, 20);
+            this.lb_codeTips.Size = new System.Drawing.Size(190, 20);
             this.lb_codeTips.TabIndex = 10;
             this.lb_codeTips.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.toolTip1.SetToolTip(this.lb_codeTips, "当前已选择的按键");
-            // 
-            // vbtn_AddCode
-            // 
-            this.vbtn_AddCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.vbtn_AddCode.BackColor = System.Drawing.Color.Transparent;
-            this.vbtn_AddCode.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.vbtn_AddCode.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.vbtn_AddCode.HoverTips = "";
-            this.vbtn_AddCode.Location = new System.Drawing.Point(221, 28);
-            this.vbtn_AddCode.Name = "vbtn_AddCode";
-            this.vbtn_AddCode.Size = new System.Drawing.Size(25, 23);
-            this.vbtn_AddCode.TabIndex = 6;
-            this.toolTip1.SetToolTip(this.vbtn_AddCode, "将指令添加到列表");
-            this.vbtn_AddCode.UseHoverImg = true;
-            this.vbtn_AddCode.VIBtn_BackColorDisabled = System.Drawing.Color.Transparent;
-            this.vbtn_AddCode.VIBtn_BackColorEnable = System.Drawing.Color.Transparent;
-            this.vbtn_AddCode.VIBtn_BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(186)))), ((int)(((byte)(195)))));
-            this.vbtn_AddCode.VIBtn_BorderRadius = 0;
-            this.vbtn_AddCode.VIBtn_BorderThickness = 1;
-            this.vbtn_AddCode.VIBtn_Enable = true;
-            this.vbtn_AddCode.VIBtn_ImgName_Disable = "check_grey";
-            this.vbtn_AddCode.VIBtn_ImgName_Enable = "check_blue";
-            this.vbtn_AddCode.VIBtn_ImgName_Hover = "check_grey";
-            this.vbtn_AddCode.VIBtn_ShowBorder = false;
-            this.vbtn_AddCode.ButtonClicked += new InputSimulator_SendInput.VariableImageButton.ButtonClickedDelegate(this.vbtn_AddCode_ButtonClicked);
             // 
             // tb_newCode
             // 
@@ -311,7 +294,7 @@
             this.tb_newCode.BackColor = System.Drawing.Color.White;
             this.tb_newCode.Location = new System.Drawing.Point(1, 27);
             this.tb_newCode.Name = "tb_newCode";
-            this.tb_newCode.Size = new System.Drawing.Size(219, 26);
+            this.tb_newCode.Size = new System.Drawing.Size(220, 26);
             this.tb_newCode.TabIndex = 5;
             // 
             // label4
@@ -428,29 +411,6 @@
             this.btn_SaveScript.UseVisualStyleBackColor = false;
             this.btn_SaveScript.Click += new System.EventHandler(this.btn_SaveScript_Click);
             // 
-            // swb_ActiveState
-            // 
-            this.swb_ActiveState.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.swb_ActiveState.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.swb_ActiveState.Location = new System.Drawing.Point(724, 30);
-            this.swb_ActiveState.Margin = new System.Windows.Forms.Padding(5, 8, 5, 8);
-            this.swb_ActiveState.Name = "swb_ActiveState";
-            this.swb_ActiveState.Size = new System.Drawing.Size(60, 23);
-            this.swb_ActiveState.swb_BackColorOff = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(245)))));
-            this.swb_ActiveState.swb_BackColorOn = System.Drawing.Color.SeaGreen;
-            this.swb_ActiveState.swb_BarColorBottom = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(222)))), ((int)(((byte)(227)))));
-            this.swb_ActiveState.swb_BarColorTop = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.swb_ActiveState.swb_BarSpacing = 2F;
-            this.swb_ActiveState.swb_BorderCorlor = System.Drawing.Color.SeaGreen;
-            this.swb_ActiveState.swb_BorderRadius = 9;
-            this.swb_ActiveState.swb_BorderThickness = 1;
-            this.swb_ActiveState.swb_OffText = "off";
-            this.swb_ActiveState.swb_OnText = "on";
-            this.swb_ActiveState.swb_TextDistance = 5F;
-            this.swb_ActiveState.swb_TextPosition = InputSimulator_SendInput.SwitchBar.StateTextPositon.None;
-            this.swb_ActiveState.SwitchState = false;
-            this.swb_ActiveState.TabIndex = 18;
-            // 
             // label10
             // 
             this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -460,7 +420,7 @@
             this.label10.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label10.Location = new System.Drawing.Point(3, 64);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(220, 20);
+            this.label10.Size = new System.Drawing.Size(221, 20);
             this.label10.TabIndex = 21;
             this.label10.Text = "以下为要保存的脚本内容";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -493,11 +453,81 @@
             this.splitContainer1.SplitterWidth = 3;
             this.splitContainer1.TabIndex = 22;
             // 
-            // frmScriptEditor
+            // treeView1
+            // 
+            this.treeView1.Location = new System.Drawing.Point(221, 12);
+            this.treeView1.Name = "treeView1";
+            treeNode1.Name = "节点0";
+            treeNode1.Text = "节点0";
+            treeNode2.Name = "节点3";
+            treeNode2.Text = "节点3";
+            treeNode3.Name = "节点4";
+            treeNode3.Text = "节点4";
+            treeNode4.Name = "节点1";
+            treeNode4.Text = "节点1";
+            treeNode5.Name = "节点2";
+            treeNode5.Text = "节点2";
+            this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode1,
+            treeNode4,
+            treeNode5});
+            this.treeView1.Size = new System.Drawing.Size(383, 425);
+            this.treeView1.TabIndex = 21;
+            // 
+            // vbtn_AddCode
+            // 
+            this.vbtn_AddCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.vbtn_AddCode.BackColor = System.Drawing.Color.Transparent;
+            this.vbtn_AddCode.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.vbtn_AddCode.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.vbtn_AddCode.HoverTips = "";
+            this.vbtn_AddCode.Location = new System.Drawing.Point(222, 28);
+            this.vbtn_AddCode.Name = "vbtn_AddCode";
+            this.vbtn_AddCode.Size = new System.Drawing.Size(25, 23);
+            this.vbtn_AddCode.TabIndex = 6;
+            this.toolTip1.SetToolTip(this.vbtn_AddCode, "将指令添加到列表");
+            this.vbtn_AddCode.UseHoverImg = true;
+            this.vbtn_AddCode.VIBtn_BackColorDisabled = System.Drawing.Color.Transparent;
+            this.vbtn_AddCode.VIBtn_BackColorEnable = System.Drawing.Color.Transparent;
+            this.vbtn_AddCode.VIBtn_BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(186)))), ((int)(((byte)(195)))));
+            this.vbtn_AddCode.VIBtn_BorderRadius = 0;
+            this.vbtn_AddCode.VIBtn_BorderThickness = 1;
+            this.vbtn_AddCode.VIBtn_Enable = true;
+            this.vbtn_AddCode.VIBtn_ImgName_Disable = "check_grey";
+            this.vbtn_AddCode.VIBtn_ImgName_Enable = "check_blue";
+            this.vbtn_AddCode.VIBtn_ImgName_Hover = "check_grey";
+            this.vbtn_AddCode.VIBtn_ShowBorder = false;
+            this.vbtn_AddCode.ButtonClicked += new InputSimulator_SendInput.VariableImageButton.ButtonClickedDelegate(this.vbtn_AddCode_ButtonClicked);
+            // 
+            // swb_ActiveState
+            // 
+            this.swb_ActiveState.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.swb_ActiveState.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.swb_ActiveState.Location = new System.Drawing.Point(965, 50);
+            this.swb_ActiveState.Margin = new System.Windows.Forms.Padding(7, 13, 7, 13);
+            this.swb_ActiveState.Name = "swb_ActiveState";
+            this.swb_ActiveState.Size = new System.Drawing.Size(80, 38);
+            this.swb_ActiveState.swb_BackColorOff = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(245)))));
+            this.swb_ActiveState.swb_BackColorOn = System.Drawing.Color.SeaGreen;
+            this.swb_ActiveState.swb_BarColorBottom = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(222)))), ((int)(((byte)(227)))));
+            this.swb_ActiveState.swb_BarColorTop = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.swb_ActiveState.swb_BarSpacing = 2F;
+            this.swb_ActiveState.swb_BorderCorlor = System.Drawing.Color.SeaGreen;
+            this.swb_ActiveState.swb_BorderRadius = 9;
+            this.swb_ActiveState.swb_BorderThickness = 1;
+            this.swb_ActiveState.swb_OffText = "off";
+            this.swb_ActiveState.swb_OnText = "on";
+            this.swb_ActiveState.swb_TextDistance = 5F;
+            this.swb_ActiveState.swb_TextPosition = InputSimulator_SendInput.SwitchBar.StateTextPositon.None;
+            this.swb_ActiveState.SwitchState = false;
+            this.swb_ActiveState.TabIndex = 18;
+            // 
+            // frmScriptEditor_V2
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(955, 676);
+            this.Controls.Add(this.treeView1);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.btn_SaveScript);
             this.Controls.Add(this.label9);
@@ -515,7 +545,7 @@
             this.Controls.Add(this.label5);
             this.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "frmScriptEditor";
+            this.Name = "frmScriptEditor_V2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "编辑脚本";
             this.Load += new System.EventHandler(this.frmScriptEditor_Load);
@@ -566,5 +596,6 @@
         private System.Windows.Forms.Button btn_SaveScript;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.TreeView treeView1;
     }
 }

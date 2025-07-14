@@ -86,6 +86,12 @@
     </Compile>
     <Compile Include="BaseClass\GlobalParams.cs" />
     <Compile Include="BaseClass\KeyboardHook.cs" />
+    <Compile Include="Forms\treeViewTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\treeViewTest.Designer.cs">
+      <DependentUpon>treeViewTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BaseClass\ScreenPatternDetector.cs" />
@@ -126,6 +132,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmScriptEditor.resx">
       <DependentUpon>frmScriptEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\treeViewTest.resx">
+      <DependentUpon>treeViewTest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
